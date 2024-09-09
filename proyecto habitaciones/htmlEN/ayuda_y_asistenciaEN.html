@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/ayuda_y_asistencia.css">
+    <link rel="stylesheet" href="../css/navLog.css">
+    <title>Help and assistance</title>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="/img/viajar.png" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <a id="idioma" href="../html/ayuda_y_asistencia.html"><img src="/proyecto habitaciones/img/Bandera Estados Unidos.png" alt=""></a>
+
+        <a id="inicio" href="../indexEN.html"></a>
+
+        <h2 class="logo"><span class="colorcito">T</span>ravel <ion-icon name="airplane-sharp"></ion-icon></h2>
+
+        <input type="checkbox" id="check">
+        <label for="check" class="iconos" iconos>
+            <span class="menu" id="menu-abierto"><ion-icon name="menu"></ion-icon></span>
+            <span class="menu" id="menu-cerrado"><ion-icon name="close-outline"></ion-icon></span>
+        </label>
+
+        <nav class="navegador">
+            <a href="indexEN.html">Home</a>
+            <a href="habitacionesEN.html">Rooms</a>
+            <a href="https://www.booking.com/hotel/es/casa-montse-playa-honda.es.html?aid=304142&label=gen173nr-1BCAsoRkIXY2FzYS1tb250c2UtcGxheWEtaG9uZGFIM1gEaEaIAQKYAQq4ARjIARHYAQHoAQGIAgGoAgS4Aqu64q8GwAIB0gIkMjY3YjcxYmYtYzNlOS00NTc3LTk3YWYtNDkxZmE0NGM4YTZi2AIF4AIB-Share-AYy8rw%401710791991#availability_target" target="_blank">Reserve</a>
+            <a href="#">Help & Support</a>
+            <button class="botonLogin-popup" onclick="abrir()">Log in</button>
+        </nav>
+    </header>
+
+    <!-- Login -->
+
+    <div class="contenedor">
+        <span class="icono-cierre" onclick="cerrar()"><ion-icon name="close-outline"></ion-icon></span>
+        <div class="forma-caja login">
+            <h2>Log in</h2>
+            <form action="#">
+                <div class="caja-input">
+                    <span class="icono"><ion-icon name="mail"></ion-icon></span>
+                    <input type="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="caja-input">
+                    <span class="icono"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="recordar-olvidar">
+                    <label><input type="checkbox">Remind me</label>
+                    <a href="#">Forgot your password?</a>
+                </div>
+                <button type="submit" class="boton">Log in</button>
+                <div class="login-register">
+                    <p>Don't have an account?<a href="#" onclick="activar()"> Register</a></p>
+                </div>
+
+            </form>
+        </div>
+
+        <!-- Registro -->
+
+        <div class="forma-caja register">
+            <h2>Register</h2>
+            <form action="#">
+                <div class="caja-input">
+                    <span class="icono"><ion-icon name="person"></ion-icon></span>
+                    <input type="text" required>
+                    <label>User</label>
+                </div>
+                <div class="caja-input">
+                    <span class="icono"><ion-icon name="mail"></ion-icon></span>
+                    <input type="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="caja-input">
+                    <span class="icono"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="recordar-olvidar">
+                    <label><input type="checkbox">I accept the terms and conditions</label>
+                </div>
+                <button type="submit" class="boton">Register</button>
+                <div class="login-register">
+                    <p>Already have an account? <a href="#" onclick="desactivar()">Log in</a></p>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <section id="contacto">
+        <h1>Contact me!</h1>
+        <form action="https://api.web3forms.com/submit" method="POST" class="contactar">
+            <input type="hidden" name="access_key" value="a9485d88-2e71-421b-8d96-af493e53d511">
+            <input type="text" name="nombre" id="nombre" class="textos" placeholder="Complete name" required>
+            <input type="email" name="correo" id="correo" class="textos" placeholder="Email" required>
+            <textarea name="mensaje" id="mensaje" class="textos" placeholder="Your message" required></textarea>
+            <button id="enviar" type="submit">Send</button>
+        </form>
+    </section>
+    <script src="../script.js"></script>
+</body>

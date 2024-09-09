@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/habitaciones.css">
+        <link rel="stylesheet" href="../css/navLog.css">
+        <title>Rooms</title>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link rel="shortcut icon" href="/img/viajar.png" type="image/x-icon">
+    </head>
+<body>
+    <div id="fondito" class="fondo"></div>
+    <header>
+        <a id="idioma" href="../html/habitaciones.html"><img src="/proyecto habitaciones/img/Bandera Estados Unidos.png" alt=""></a>
+        
+        <a id="inicio" href="indexEN.html"></a>
+
+        <h2 class="logo"><span class="colorcito">T</span>ravel <ion-icon name="airplane-sharp"></ion-icon></h2>
+
+        <input type="checkbox" id="check">
+        <label for="check" class="iconos" iconos>
+            <span class="menu" id="menu-abierto"><ion-icon name="menu"></ion-icon></span>
+            <span class="menu" id="menu-cerrado"><ion-icon name="close-outline"></ion-icon></span>
+        </label>
+
+        <nav class="navegador">
+            <a href="indexEN.html">Home</a>
+            <a href="#">Rooms</a>
+            <a href="https://www.booking.com/hotel/es/casa-montse-playa-honda.es.html?aid=304142&label=gen173nr-1BCAsoRkIXY2FzYS1tb250c2UtcGxheWEtaG9uZGFIM1gEaEaIAQKYAQq4ARjIARHYAQHoAQGIAgGoAgS4Aqu64q8GwAIB0gIkMjY3YjcxYmYtYzNlOS00NTc3LTk3YWYtNDkxZmE0NGM4YTZi2AIF4AIB-Share-AYy8rw%401710791991#availability_target" target="_blank">Reservar</a>
+            <a href="ayuda_y_asistenciaEN.html">Help and Support</a>
+            <button class="botonLogin-popup" onclick="abrir()">log in </button>
+        </nav>
+    </header>
+
+    <!-- Login -->
+
+    <div class="contenedor">
+        <span class="icono-cierre" onclick="cerrar()"><ion-icon name="close-outline"></ion-icon></span>
+        <div class="forma-caja login">
+            <h2>log in </h2>
+            <form action="#">
+                <div class="caja-input">
+                    <span class="icono"><ion-icon name="mail"></ion-icon></span>
+                    <input type="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="caja-input">
+                    <span class="icono"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="recordar-olvidar">
+                    <label><input type="checkbox">Remind me</label>
+                    <a href="#">Forgot your password?</a>
+                </div>
+                <button type="submit" class="boton">Sign in</button>
+                <div class="login-register">
+                    <p>Don't have an account?<a href="#" onclick="activar()">Register</a></p>
+                </div>
+
+            </form>
+        </div>
+
+        <!-- Registro -->
+
+        <div class="forma-caja register">
+            <h2>Register</h2>
+            <form action="#">
+                <div class="caja-input">
+                    <span class="icono"><ion-icon name="person"></ion-icon></span>
+                    <input type="text" required>
+                    <label>User</label>
+                </div>
+                <div class="caja-input">
+                    <span class="icono"><ion-icon name="mail"></ion-icon></span>
+                    <input type="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="caja-input">
+                    <span class="icono"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="recordar-olvidar">
+                    <label><input type="checkbox">I accept the terms and conditions</label>
+                </div>
+                <button type="submit" class="boton">Register</button>
+                <div class="login-register">
+                    <p>Already have an account? <a href="#" onclick="desactivar()">Log in</a></p>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <!-- GALERIA -->
+
+    <section id="parte-principal">
+        <div id="galeria">
+            <div class="contenedor-galeria"><img src="../img/1.1.jpg"></div>
+            <div class="contenedor-galeria"><img src="../img/1.4.jpg"></div>
+            <div class="contenedor-galeria"><img src="../img/3.jpg"></div>
+            <div class="contenedor-galeria"><img src="../img/2.1.jpg"></div>
+            <div class="contenedor-galeria"><img src="../img/1.6.jpg"></div>
+        </div>
+        <div id="nombre-puntuacion">
+            <div>
+                <h3>Paradise room near the beach</h3>
+                <p> 41 Calle Lancha, 35509 Playa Honda, España<a href="https://www.booking.com/hotel/es/casa-montse-playa-honda.es.html?aid=304142&label=gen173nr-1BCAsoRkIXY2FzYS1tb250c2UtcGxheWEtaG9uZGFIM1gEaEaIAQKYAQq4ARjIARHYAQHoAQGIAgGoAgS4Aqu64q8GwAIB0gIkMjY3YjcxYmYtYzNlOS00NTc3LTk3YWYtNDkxZmE0NGM4YTZi2AIF4AIB-Share-AYy8rw%401710791991#map_opened-hotel_header" target="_blank">- Very good location - View map <ion-icon name="map"></ion-icon></a></p>
+
+            </div>
+            <div>
+                <h3>Fabulous</h3>
+                <p>8,8</p>
+                <p>387 comments</p>
+            </div>
+        </div>
+
+        <!-- INFORMACIÓN SOBRE EL ALOJAMIENTO -->
+
+        <section id="informacion-alojamiento">
+            <p>Paradise room near the beach features a terrace and is located in Playa Honda, 7 min walk from Playa de Guacimeta and 1.6 km from Playa de la Concha. <br><br>
+
+                The units are equipped with a patio, a flat-screen TV and a private bathroom with shower and hairdryer. There is also a microwave and refrigerator, as well as a coffee maker and kettle. <br><br>
+                
+                Rancho Texas Park is 8.2 km from the accommodation, and Lanzarote Golf Resort is 10 km away. The airport (Lanzarote Airport) is within walking distance. <br><br>
+
+                Couples love the location - They've given it a <span>8,9</span> for two-person travel. <br><br>
+            </p>
+
+        </section>
+
+        <!-- SECCIONES -->
+
+        <div id="seleccion">
+            <div><a id="primera-seccion" class="opciones-seleccion" onclick="activarSección1()">Services</a></div>
+            <div><a class="opciones-seleccion" onclick="activarSección2()">Rooms</a></div>
+            <div><a class="opciones-seleccion" onclick="activarSección3()">Rules</a></div>
+            <div><a class="opciones-seleccion" onclick="activarSección4()">Points of interest <ion-icon name="locate"></ion-icon></a></div>
+        </div>
+    </section>
+
+    <!-- SERVICIOS -->
+
+    <section id="contenido">
+        <div id="servicios" class="servicios">
+            <h3>Loading services</h3>
+            <div id="resultado-servicios">
+                
+            </div>
+        </div>
+
+        <!-- HABITACIONES -->
+
+        <div id="habitaciones" class="habitaciones">
+            <div class="contenedor-habitacion">
+                <img src="../img/1.jpg">
+                <div class="info-habitacion">
+                    <div class="nombre-habitacion">
+                        <h4>Double Room in a shared house</h4>
+                        <p>0.5 km from the center of Playa Honda</p>
+                        <p>Airport 20 minutes walking distance</p>
+                    </div>
+                    <div id="tiempo" class="tiempo">
+
+                    </div>
+                    <div class="atributo-habitacion">
+                        <h4>Cozy room</h4>
+                        <p>x1 double bed <ion-icon name="bed"></ion-icon></p>
+                        <p>x2 Persons <ion-icon name="person"></ion-icon><ion-icon name="person"></ion-icon></p>
+                    </div>
+                    <div class="ver-mas-habitacion">
+                        <a onclick="activarHabitacion1()">Discover more</a>
+                    </div>
+                </div>
+                <div id="habitacion1" class="habitacion">
+                    <div id="icono-cierre" onclick="desactiveHabitacion1()"><ion-icon class="cierre" name="close"></ion-icon></div>
+                    <div id="galeria-habitacion1" class="galeria-habitacion">
+                        <div id="galeria2">
+                            <div class="galeria2-contenedor">
+                                <figure class="galeria2-objeto">
+                                    <div class="contenedor-imagen">
+                                        <img id="imagen1" src="/img/1.1.jpg" alt="Imagen 1">
+                                    </div>
+                                </figure>
+                                <figure class="galeria2-objeto">
+                                    <div class="contenedor-imagen">
+                                        <img src="/img/1.2.jpg" alt="Imagen 2">
+                                    </div>
+                                </figure>
+                                <figure class="galeria2-objeto">
+                                    <div class="contenedor-imagen">
+                                        <img src="/img/1.3.jpg" alt="Imagen 3">
+                                    </div>
+                                </figure>
+                                <figure class="galeria2-objeto">
+                                    <div class="contenedor-imagen">
+                                        <img src="/img/1.4.jpg" alt="Imagen 4">
+                                    </div>
+                                </figure>
+                                <figure class="galeria2-objeto">
+                                    <div class="contenedor-imagen">
+                                        <img src="/img/1.5.jpg" alt="Imagen 5">
+                                    </div>
+                                </figure>
+                                <figure class="galeria2-objeto">
+                                    <div class="contenedor-imagen">
+                                        <img src="/img/1.7.jpg" alt="Imagen 6">
+                                    </div>
+                                </figure>
+                                <figure class="galeria2-objeto">
+                                    <div class="contenedor-imagen">
+                                        <img src="/img/1.8.jpg" alt="Imagen 7">
+                                    </div>
+                                </figure>
+                                <figure class="galeria2-objeto">
+                                    <div class="contenedor-imagen">
+                                        <img src="/img/1.9.jpg" alt="Imagen 8">
+                                    </div>
+                                </figure>
+                            </div>
+                            <nav class="galeria2-navigation">
+                                <button class="nav-boton prev-boton"><div class="flecha-contenedor"><ion-icon name="arrow-back"></ion-icon></div></button>
+                                <button class="nav-boton next-boton"><div class="flecha-contenedor"><ion-icon name="arrow-forward"></ion-icon></div></button>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="contenedor-grilla">
+                        <div class="descripcion">
+                            <h3>Double Room in a shared house</h3>
+                            <p>This double room features free toiletries and a private bathroom with walk-in shower and hairdryer. It also has a kettle, coffee maker, closet, flat-screen TV and chocolate for guests. The room has 1 bed.</p>
+                            <p>Comfortable beds <span class="negrita">9.1</span> according to <span class="negrita">168</span> comments</p>
+                        </div>
+                        <div class="grilla">
+                            <div>
+                                <ion-icon name="grid"></ion-icon>
+                                <p>17 m²</p>
+                            </div>
+                            <div>
+                                <ion-icon name="rose"></ion-icon>
+                                <p>Courtyard</p>
+                            </div>
+                            <div>
+                                <ion-icon name="water"></ion-icon>
+                                <p>Private bath</p>
+                            </div>
+                            <div>
+                                <ion-icon name="tv"></ion-icon>
+                                <p>Flat-screen TV</p>
+                            </div>
+                            <div>
+                                <ion-icon name="cafe"></ion-icon>
+                                <p>Coffee maker</p>
+                            </div>
+                            <div>
+                                <ion-icon name="wifi"></ion-icon>
+                                <p>Free WiFi</p>
+                            </div>
+                        </div>
+                        <div class="servicios-habitacion">
+                            <h3>Services</h3>
+                            <div>
+                                <p><ion-icon name="checkmark"></ion-icon> Fan</p>
+                                <p><ion-icon name="checkmark"></ion-icon> Fridge</p>
+                                <p><ion-icon name="checkmark"></ion-icon> Closet</p>
+                                <p><ion-icon name="checkmark"></ion-icon> Microwave</p>
+                                <p><ion-icon name="checkmark"></ion-icon> Flat screen TV</p>
+                                <p><ion-icon name="checkmark"></ion-icon> Towels</p>
+                                <p><ion-icon name="checkmark"></ion-icon> Kettle / coffee maker</p>
+                                <p><ion-icon name="checkmark"></ion-icon> Outdoor dining area</p>
+                                <p><ion-icon name="checkmark"></ion-icon> Electric kettle</p>
+                                <p><ion-icon name="checkmark"></ion-icon> Coffee maker</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="habitacion2" class="habitacion">
+                    <div id="icono-cierre" onclick="desactiveHabitacion2()"><ion-icon class="cierre" name="close"></ion-icon></div>
+                    <div id="galeria-habitacion1" class="galeria-habitacion">
+                        <div id="galeria2">
+                            <div class="galeria3-contenedor">
+                                <figure class="galeria3-objeto">
+                                    <div class="contenedor-imagen">
+                                        <img src="/img/2.1.jpg" alt="Imagen 1">
+                                    </div>
+                                </figure>
+                                <figure class="galeria3-objeto">
+                                    <div class="contenedor-imagen">
+                                        <img src="/img/2.2.jpg" alt="Imagen 2">
+                                    </div>
+                                </figure>
+                                <figure class="galeria3-objeto">
+                                    <div class="contenedor-imagen">
+                                        <img src="/img/2.3.jpg" alt="Imagen 3">
+                                    </div>
+                                </figure>
+                                <figure class="galeria3-objeto">
+                                    <div class="contenedor-imagen">
+                                        <img src="/img/2.4.jpg" alt="Imagen 4">
+                                    </div>
+                                </figure>
+                                <figure class="galeria3-objeto">
+                                    <div class="contenedor-imagen">
+                                        <img src="/img/2.5.jpg" alt="Imagen 5">
+                                    </div>
+                                </figure>
+                            </div>
+                            <nav class="galeria2-navigation">
+                                <button  class="nav-boton prev-boton prev-boton2"><div class="flecha-contenedor"><ion-icon name="arrow-back"></ion-icon></div></button>
+                                <button  class="nav-boton next-boton next-boton2"><div class="flecha-contenedor"><ion-icon name="arrow-forward"></ion-icon></div></button>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="contenedor-grilla">
+                        <div class="descripcion">
+                            <h3>King Room in a shared house</h3>
+                            <p>This double room features free toiletries and a private bathroom with walk-in shower and hairdryer. It also features a kettle, coffee maker, closet, flat-screen TV and chocolate for guests. The room has 1 bed.</p>
+                            <p>Comfortable beds <span class="negrita">9.1</span> according to <span class="negrita">168</span> comments</p>
+                        </div>
+                        <div class="grilla">
+                            <div>
+                                <ion-icon name="grid"></ion-icon>
+                                <p>17 m²</p>
+                            </div>
+                            <div>
+                                <ion-icon name="rose"></ion-icon>
+                                <p>Courtyard</p>
+                            </div>
+                            <div>
+                                <ion-icon name="water"></ion-icon>
+                                <p>Private bath</p>
+                            </div>
+                            <div>
+                                <ion-icon name="tv"></ion-icon>
+                                <p>Flat screen TV</p>
+                            </div>
+                            <div>
+                                <ion-icon name="cafe"></ion-icon>
+                                <p>Coffee maker</p>
+                            </div>
+                            <div>
+                                <ion-icon name="wifi"></ion-icon>
+                                <p>Free WiFi</p>
+                            </div>
+                        </div>
+                        <div class="servicios-habitacion">
+                            <h3>Services</h3>
+                            <div>
+                                <p><ion-icon name="checkmark"></ion-icon> Fan</p>
+                                <p><ion-icon name="checkmark"></ion-icon> Fridge</p>
+                                <p><ion-icon name="checkmark"></ion-icon> Closet</p>
+                                <p><ion-icon name="checkmark"></ion-icon> Microwave</p>
+                                <p><ion-icon name="checkmark"></ion-icon> Flat screen TV</p>
+                                <p><ion-icon name="checkmark"></ion-icon> Towels</p>
+                                <p><ion-icon name="checkmark"></ion-icon> Kettle/coffee maker</p>
+                                <p><ion-icon name="checkmark"></ion-icon> Outdoor dining area</p>
+                                <p><ion-icon name="checkmark"></ion-icon> Electric kettle</p>
+                                <p><ion-icon name="checkmark"></ion-icon> Coffee maker</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="contenedor-habitacion1EN" class="contenedor-habitacion">
+                <img src="../img/2.1.jpg">
+                <div class="info-habitacion">
+                    <div class="nombre-habitacion">
+                        <h4>King Room in a shared house</h4>
+                        <p>0.5 km from the center of Playa Honda</p>
+                        <p>Near the airport</p>
+                    </div>
+                    <div id="tiempo2" class="tiempo">
+
+                    </div>
+                    <div class="atributo-habitacion">
+                        <h4>Cozy room</h4>
+                        <p>x1 large double bed <ion-icon name="bed"></ion-icon></p>
+                        <p>x2 Persons <ion-icon name="person"></ion-icon><ion-icon name="person"></ion-icon></p>
+                    </div>
+                    <div class="ver-mas-habitacion">
+                        <a onclick="activarHabitacion2()">Discover more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- REGLAS -->
+
+        <div id="reglas" class="reglas">
+            <div>
+                <div class="fila">
+                    <div class="contenedor-regla-titulo">
+                        <ion-icon name="alarm"></ion-icon>
+                        <p>Entry time</p>
+                    </div>
+                    <div class="contenedor-regla">
+                            <p>From 15:00 to 00:30</p>
+                    </div>
+                </div>
+                <div class="fila">
+                    <div class="contenedor-regla-titulo">
+                        <ion-icon name="alarm"></ion-icon>
+                        <p>Outlet time</p>
+                    </div>
+                    <div class="contenedor-regla">
+                        <p>From 05:00 to 11:00 a.m.</p>
+                    </div>
+                </div>
+                <div class="fila">
+                    <div class="contenedor-regla-titulo">
+                        <ion-icon name="information-circle-outline"></ion-icon>
+                        <p>Cancellation/ prepayment</p>
+                    </div>
+                    <div class="contenedor-regla">
+                        <p>Cancellation and prepayment conditions may vary according to the type of accommodation. <a target="_blank" href="https://www.booking.com/hotel/es/casa-montse-playa-honda.es.html?aid=304142&label=gen173nr-1BCAsoRkIXY2FzYS1tb250c2UtcGxheWEtaG9uZGFIM1gEaEaIAQKYAQq4ARjIARHYAQHoAQGIAgGoAgS4Aqu64q8GwAIB0gIkMjY3YjcxYmYtYzNlOS00NTc3LTk3YWYtNDkxZmE0NGM4YTZi2AIF4AIB-Share-AYy8rw%401710791991#availability_target" rel="noopener noreferrer">Please enter the dates of your stay</a> and check the conditions of the selected room.</p>
+                    </div>
+                </div>
+                <div class="fila">
+                    <div class="contenedor-regla-titulo">
+                        <ion-icon name="information-circle-outline"></ion-icon>
+                        <p>Housing damage conditions</p>
+                    </div>
+                    <div class="contenedor-regla">
+                        <p>If you cause damage to the accommodation during your stay, you may be asked to pay up to EUR 300 after check-out, according to the<a href="https://www.booking.com/content/terms.es.html?aid=304142&label=gen173nr-1FCAsoRkIXY2FzYS1tb250c2UtcGxheWEtaG9uZGFIM1gEaEaIAQKYAQq4ARjIARHYAQHoAQGIAgGoAgS4Aqu64q8GwAIB0gIkMjY3YjcxYmYtYzNlOS00NTc3LTk3YWYtNDkxZmE0NGM4YTZi2AIG4AIB&sid=c2d28f15538dcb2f3182582841595916#sep2023_terms_accommodations_know_subheading_6" target="_blank" rel="noopener noreferrer"> conditions on damage to the accommodation.</a></p>
+                    </div>
+                </div>
+                <div id="camas" class="fila">
+                    <div id="camas-para-niños" class="contenedor-regla-titulo">
+                        <ion-icon name="bed"></ion-icon>
+                        <p>Children's beds</p>
+                    </div>
+                    <div class="contenedor-regla">
+                        <p><span>Conditions for stays with children</span></p>
+                        <p>Children can't be accommodated.</p>
+                        <p><span>Conditions regarding cribs and extra beds.</span></p>
+                        <p>Cribs cannot be added in this accommodation.</p>
+                        <p>Extra beds cannot be added in this accommodation.</p>
+                    </div>
+                </div>
+                <div class="fila">
+                    <div class="contenedor-regla-titulo">
+                        <ion-icon name="person"></ion-icon>
+                        <p>Age restriction</p>
+                    </div>
+                    <div class="contenedor-regla">
+                        <p>Minimum age to check-in: 18</p>
+                    </div>
+                </div>
+                <div class="fila">
+                    <div class="contenedor-regla-titulo">
+                        <ion-icon name="card"></ion-icon>
+                        <p>Payments through Booking.com</p>
+                    </div>
+                    <div class="contenedor-regla">
+                        <p>Booking.com handles the payment for your stay on behalf of the accommodation, but be sure to bring cash so you can pay for any additional expenses once you are there.</p>
+                    </div>
+                </div>
+                <div class="fila">
+                    <div class="contenedor-regla-titulo">
+                        <ion-icon name="logo-no-smoking"></ion-icon>
+                        <p>Smoking/ Non-smoking</p>
+                    </div>
+                    <div class="contenedor-regla">
+                        <p>Smoking is not permitted.</p>
+                    </div>
+                </div>
+                <div class="fila">
+                    <div class="contenedor-regla-titulo">
+                        <ion-icon name="beer"></ion-icon>
+                        <p>Parties</p>
+                    </div>
+                    <div class="contenedor-regla">
+                        <p>No parties/events may be held</p>
+                    </div>
+                </div>
+                <div class="fila">
+                    <div class="contenedor-regla-titulo">
+                        <ion-icon name="moon"></ion-icon>
+                        <p>No-noise schedule</p>
+                    </div>
+                    <div class="contenedor-regla">
+                        <p>Customers should minimize noise from 23:00 to 07:00.</p>
+                    </div>
+                </div>
+                <div class="fila">
+                    <div class="contenedor-regla-titulo">
+                        <ion-icon name="paw"></ion-icon>
+                        <p>Pets</p>
+                    </div>
+                    <div class="contenedor-regla">
+                        <p>Not allowed.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PUNTOS DE INTERÉS -->
+
+        <!-- PONER UN MAPA DEBAJO DE LOS PUNTOS DE INTERÉS -->
+
+        <div id="puntos-interes" class="puntos-interes">
+            <div id="contenedor-lugares">
+                <div id="cercania">
+                    <h3><ion-icon name="walk"></ion-icon> What's nearby?</h3>
+                    <div>
+                        <p class="lugar">Pocillos Beach</p>
+                        <p class="km">2,8 km</p>
+                    </div>
+
+                    <div>
+                        <p class="lugar">HG Club Valena</p>
+                        <p class="km">2,9 km</p>
+                    </div>
+
+                    <div>
+                        <p class="lugar">San Marcial</p>
+                        <p class="km">3 km</p>
+                    </div>
+
+                    <div>
+                        <p class="lugar">Sunseeker Club</p>
+                        <p class="km">3 km</p>
+                    </div>
+
+                    <div>
+                        <p class="lugar">The Corals</p>
+                        <p class="km">3 km</p>
+                    </div>
+
+                    <div>
+                        <p class="lugar">Beatriz  Beach</p>
+                        <p class="km">3 km</p>
+                    </div>
+
+                    <div>
+                        <p class="lugar">HG Guacimeta</p>
+                        <p class="km">3 km</p>
+                    </div>
+
+                    <div>
+                        <p class="lugar">Malva Bungalows</p>
+                        <p class="km">3 km</p>
+                    </div>
+
+                    <div>
+                        <p class="lugar">Comunidad Agua Dulce</p>
+                        <p class="km">2,9 km</p>
+                    </div>
+
+                    <div>
+                        <p class="lugar">Las Marinas</p>
+                        <p class="km">3,1 km</p>
+                    </div>
+                </div>
+                <div id="atracciones">
+                    <h3><ion-icon name="bicycle"></ion-icon> Tourist attractions</h3>
+                    <div>
+                        <p class="lugar">Monument to the Peasant</p>
+                        <p class="km">7 km</p>
+                    </div>
+
+                    <div>
+                        <p class="lugar">Lagomar Museum</p>
+                        <p class="km">10 km</p>
+                    </div>
+
+                    <div>
+                        <p class="lugar">Cactus Garden</p>
+                        <p class="km">18 km</p>
+                    </div>
+
+                    <div>
+                        <p class="lugar">Timanfaya National Park</p>
+                        <p class="km">18 km</p>
+                    </div>
+                </div>
+                <div id="playas">
+                    <h3><ion-icon name="boat"></ion-icon> Beaches in the area</h3>
+                    <div>
+                        <p class="lugar">Guacimeta Beach</p>
+                        <p class="km">450 m</p>
+                    </div>
+
+                    <div>
+                        <p class="lugar">La Concha Beach</p>
+                        <p class="km">1,3 km</p>
+                    </div>
+
+                    <div>
+                        <p class="lugar">Cable Beach</p>
+                        <p class="km">1,9 km</p>
+                    </div>
+
+                    <div>
+                        <p class="lugar">Lima Beach</p>
+                        <p class="km">2,6 km</p>
+                    </div>
+
+                    <div>
+                        <p class="lugar">Reducto Beach</p>
+                        <p class="km">3,5 km</p>
+                    </div>
+                </div>
+
+                <div id="restaurantes">
+                    <h3><ion-icon name="restaurant"></ion-icon> Restaurants and coffee shops</h3>
+                    <div>
+                        <p class="lugar">Coffee shop/bar Terrace · El Concorde</p>
+                        <p class="km">50 m</p>
+                    </div>
+
+                    <div>
+                        <p class="lugar">Restaurant - Aguaviva</p>
+                        <p class="km">200 m</p>
+                    </div>
+                </div>
+                <div id="aeropuertos">
+                    <h3><ion-icon name="airplane"></ion-icon> Nearest airports</h3>
+                    <div>
+                        <p class="lugar">Lanzarote Airport</p>
+                        <p class="km">150 m</p>
+                    </div>
+
+                    <div>
+                        <p class="lugar">Fuerteventura Airport</p>
+                        <p class="km">60 km</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- RESEÑAS -->
+
+    <section id="reseñas">
+        <h3>Reviews</h3>
+        <div id="reseña">
+            <h2>8,8 sobre 10</h2>
+            <div id="reseña-contenedor">
+                <div class="reseña-contenido">
+                    <div class="texto-reseña">
+                        <p>Personal</p>
+                        <p>8,7</p>
+                    </div>
+                    <div class="barra"><div id="personal" class="colorida"></div></div>
+                </div>
+
+                <div class="reseña-contenido">
+                    <div class="texto-reseña">
+                        <p>Facilities & Services</p>
+                        <p>9,0</p>
+                    </div>
+                    <div class="barra"><div id="instalaciones" class="colorida"></div></div>
+                </div>
+
+                <div class="reseña-contenido">
+                    <div class="texto-reseña">
+                        <p>Cleaning</p>
+                        <p>9,3</p>
+                    </div>
+                    <div class="barra"><div id="limpieza" class="colorida"></div></div>
+                </div>
+
+                <div class="reseña-contenido">
+                    <div class="texto-reseña">
+                        <p>Confort</p>
+                        <p>9,3</p>
+                    </div>
+                    <div class="barra"><div id="confort" class="colorida"></div></div>
+                </div>
+
+                <div class="reseña-contenido">
+                    <div class="texto-reseña">
+                        <p>Price-quality ratio</p>
+                        <p>9,2</p>
+                    </div>
+                    <div class="barra"><div id="calidad-precio" class="colorida"></div></div>
+                </div>
+
+                <div class="reseña-contenido">
+                    <div class="texto-reseña">
+                        <p>location</p>
+                        <p>8,9</p>
+                    </div>
+                    <div class="barra"><div id="ubicacion" class="colorida"></div></div>
+                </div>
+
+                <div class="reseña-contenido">
+                    <div class="texto-reseña">
+                        <p>Free Wi-Fi</p>
+                        <p>10</p>
+                    </div>
+                    <div class="barra"><div id="wifi" class="colorida"></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- A TENER EN CUENTA -->
+
+    <section id="tener-en-cuenta">
+        <h3>To be taken into consideration</h3>
+        <h5>Important information on housing</h5>
+        <div>
+            <p>Please inform Paradise room near the beach in advance of your expected arrival time. Please use the Special Requests box when booking or contact the property directly. Contact details are included in the booking confirmation. <br><br>
+
+                This accommodation is not suitable for bachelor or bachelorette parties or similar celebrations. <br><br>
+                
+                No noise from 23:00 to 07:00. <br><br>
+                
+                If you cause damage to the accommodation during your stay, you may be asked to pay a fee of up to € 300 after check-out, according to the <a target="_blank" href="https://www.booking.com/content/terms.es.html?aid=304142&label=gen173nr-1FCAsoRkIXY2FzYS1tb250c2UtcGxheWEtaG9uZGFIM1gEaEaIAQKYAQq4ARjIARHYAQHoAQGIAgGoAgS4Aqu64q8GwAIB0gIkMjY3YjcxYmYtYzNlOS00NTc3LTk3YWYtNDkxZmE0NGM4YTZi2AIG4AIB&sid=c2d28f15538dcb2f3182582841595916#sep2023_terms_accommodations_know_subheading_6" rel="noopener noreferrer">conditions on damage to the accommodation</a>.</p>
+        </div>
+    </section>
+
+    <script src="../scriptEN.js"></script>
+</body>
+</html>
