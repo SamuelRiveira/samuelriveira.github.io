@@ -124,7 +124,7 @@ hr{
     color: white;
 }
 
-#contenedor-titulo-proyectos{
+.contenedor-titulo{
     display: flex;
     width: 100%;
     margin-bottom: 35px;
@@ -203,4 +203,17 @@ hr{
 .proyecto-info p{
     font-size: 18px;
     color: #CBD5E1;
+}
+
+#tecnologias{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    margin-top: 64px;
+}
+
+#grid-tecnologias{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background-color: lightskyblue;
 }
