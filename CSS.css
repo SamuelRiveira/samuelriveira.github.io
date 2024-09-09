@@ -147,7 +147,7 @@ hr{
 
 .proyecto{
     display: grid;
-    grid-template-columns: 1.7fr 2fr;
+    grid-template-columns: 1.5fr 1.5fr;
 }
 
 .proyecto-imagen{
