@@ -18,6 +18,7 @@ section{
     height: 100%;
     overflow: hidden;
     margin-top: 72px;
+    margin-bottom: 32px;
 }
 
 /* NAVEGADOR */
@@ -128,6 +129,7 @@ hr{
     display: flex;
     width: 100%;
     margin-bottom: 35px;
+    gap: 15px;
 }
 
 #proyectos h2{
@@ -136,7 +138,6 @@ hr{
 
 #icono-cubo{
     margin-top: 2px;
-    margin-left: 10px;
 }
 
 #contenedor-proyectos{
@@ -178,6 +179,10 @@ hr{
 
 .ir-a-proyecto:hover{
     translate: 0px -5px;
+    .icono-visitar{
+        rotate: 60deg;
+        transport
+    }
 }
 
 .ir-a-proyecto div p{
@@ -187,6 +192,7 @@ hr{
 .icono-visitar{
     color: black;
     font-size: 20px;
+    transition: .2s ease;
 }
 
 .proyecto-info{
@@ -218,6 +224,7 @@ hr{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 64px;
+    padding: .5%;
 }
 
 .contenedor-tecnologia{
