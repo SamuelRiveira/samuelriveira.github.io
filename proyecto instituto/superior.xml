@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<superior>
+    <primer-año>
+        <modulo>
+            <imagen>imagenes/sistemas.jpg</imagen>
+            <titulo>Sistemas informáticos</titulo>
+        </modulo>
+        <ventana-modulo>
+            <imagen>imagenes/sistemas.jpg</imagen>
+            <titulo>Sistemas informáticos</titulo>
+            <contenido>El objetivo del módulo de "Sistemas Informáticos" pretende formar al alumno en los distintos sistemas informáticos, principalmente en lo que respecta a los sistemas operativos, las aplicaciones de propósito general y las redes de área local. Horas Semanales : 5 horas Horas Totales: 160 horas.</contenido>
+        </ventana-modulo>
+        <modulo>
+            <imagen>imagenes/programas-bases-de-datos.jpg</imagen>
+            <titulo>Base de datos</titulo>
+        </modulo>
+        <ventana-modulo>
+            <imagen>imagenes/programas-bases-de-datos.jpg</imagen>
+            <titulo>Base de datos</titulo>
+            <contenido>Este módulo profesional contiene la formación necesaria para desempeñar funciones relacionadas con la gestión de la información almacenada en bases de datos y el desarrollo de aplicaciones que acceden a bases de datos. Horas Semanales : 6 horas Horas Totales: 190 horas</contenido>
+        </ventana-modulo>
+        <modulo>
+            <imagen>imagenes/Que-es-la-programacion.jpg</imagen>
+            <titulo>Programación</titulo>
+        </modulo>
+        <ventana-modulo>
+            <imagen>imagenes/Que-es-la-programacion.jpg</imagen>
+            <titulo>Programación</titulo>
+            <contenido>Este módulo profesional contiene parte de la formación necesaria para desempeñar la función de programación de aplicaciones de propósito general en lenguajes orientados a objetos.</contenido>
+        </ventana-modulo>
+        <modulo>
+            <imagen>imagenes/code-markup.jpg</imagen>
+            <titulo>Lenguajes de marcas</titulo>
+        </modulo>
+        <ventana-modulo>
+            <imagen>imagenes/code-markup.jpg</imagen>
+            <titulo>Lenguajes de marcas</titulo>
+            <contenido>Este módulo profesional contiene la formación necesaria para desempeñar la funciónde gestión y explotación de sistemas de información. Horas Semanales : 4 horas Horas Totales: 128 horas</contenido>
+        </ventana-modulo>
+        <modulo>
+            <imagen>imagenes/entornos de desarrollo.png</imagen>
+            <titulo>Entorno de Desarrollo</titulo>
+        </modulo>
+        <ventana-modulo>
+            <imagen>imagenes/entornos de desarrollo.png</imagen>
+            <titulo>Entorno de Desarrollo</titulo>
+            <contenido>Este módulo profesional contiene la formación necesaria para la utilización de las herramientas software disponibles, la elaboración de documentación interna y técnica de la aplicación, elaboración y ejecución de pruebas y la optimización de código. Horas Semanales : 3 horas Horas Totales: 96 horas</contenido>
+        </ventana-modulo>
+        <modulo>
+            <imagen>imagenes/FOL.jpg</imagen>
+            <titulo>Itinerario personal para la Empleabilidad I</titulo>
+        </modulo>
+        <ventana-modulo>
+            <imagen>imagenes/FOL2.jpg</imagen>
+            <titulo>Itinerario personal para la Empleabilidad I</titulo>
+            <contenido>Este módulo profesional contiene la formación necesaria para que el alumno pueda insertarse laboralmente y desarrollar su carrera profesional en el sector del Desarrollo de Aplicaciones multiplataforma. Horas Semanales : 3 horas Horas Totales: 96 horas</contenido>
+        </ventana-modulo>
+        <modulo>
+            <imagen>imagenes/Digitalización aplicada a los sectores productivos.jpg</imagen>
+            <titulo>Digitalización aplicada a los sectores productivos</titulo>
+        </modulo>
+        <ventana-modulo>
+            <imagen>imagenes/Digitalización aplicada a los sectores productivos.jpg</imagen>
+            <titulo>Digitalización aplicada a los sectores productivos</titulo>
+            <contenido>Este módulo profesional contiene la formación necesaria para que el alumno pueda insertarse laboralmente y desarrollar su carrera profesional en el sector del Desarrollo de Aplicaciones multiplataforma. Horas Semanales : 3 horas Horas Totales: 96 horas</contenido>
+        </ventana-modulo>
+        <modulo>
+            <imagen>imagenes/ingles.jpg</imagen>
+            <titulo>Inglés profesional</titulo>
+        </modulo>
+        <ventana-modulo>
+            <imagen>imagenes/ingles.jpg</imagen>
+            <titulo>Inglés profesional</titulo>
+            <contenido>La asignatura de ingles se enfoca principalmente al sector informático, enseñandote nuevo vocabulario relacionado con el mundo informático : Horas Semanales : 2 horas
+Horas Totales: 64 horas </contenido>
+        </ventana-modulo>
+    </primer-año>
+    <segundo-año>
+        <modulo>
+            <imagen>imagenes/Acceso de datos.jpg</imagen>
+            <titulo>Acceso de datos</titulo>
+        </modulo>
+        <ventana-modulo>
+            <imagen>imagenes/Acceso de datos.jpg</imagen>
+            <titulo>Acceso de datos</titulo>
+            <contenido>El objetivo de la asignatura de Acceso a Datos es proporcionar a los estudiantes los conocimientos y habilidades necesarios para diseñar, implementar y gestionar sistemas de bases de datos de manera efectiva y segura. Horas Semanales : 7 horas Horas Totales: 147 horas</contenido>
+        </ventana-modulo>
+        <modulo>
+            <imagen>imagenes/banner-superposicion-grafica-red-portatil-scaled.jpg.webp</imagen>
+            <titulo>Desarrollo de interfaces</titulo>
+        </modulo>
+        <ventana-modulo>
+            <imagen>imagenes/banner-superposicion-grafica-red-portatil-scaled.jpg.webp</imagen>
+            <titulo>Desarrollo de interfaces</titulo>
+            <contenido>El objetivo de la asignatura de Desarrollo de Interfaces en el ciclo superior de DAM es proporcionar a los estudiantes los conocimientos y habilidades necesarios para diseñar y desarrollar interfaces de usuario para aplicaciones informáticas. Horas Semanales : 7 horas Horas Totales: 147 horas</contenido>
+        </ventana-modulo>
+        <modulo>
+            <imagen>imagenes/PROGRAMACIÓN MULTIMEDIA Y DISPOSITIVOS MÓVILES.jpg</imagen>
+            <titulo>Programación multimedia y dispositivos móviles</titulo>
+        </modulo>
+        <ventana-modulo>
+            <imagen>imagenes/PROGRAMACIÓN MULTIMEDIA Y DISPOSITIVOS MÓVILES.jpg</imagen>
+            <titulo>Programación multimedia y dispositivos móviles</titulo>
+            <contenido>El objetivo de la asignatura de Programación multimedia y dispositivos móviles en el ciclo superior de DAM es proporcionar a los estudiantes los conocimientos y habilidades necesarios para desarrollar aplicaciones multimedia y para dispositivos móviles. Horas Semanales : 4 horas Horas Totales: 84 horas</contenido>
+        </ventana-modulo>
+        <modulo>
+            <imagen>imagenes/programacion-guia.jpg</imagen>
+            <titulo>Programación de servicios y procesos</titulo>
+        </modulo>
+        <ventana-modulo>
+            <imagen>imagenes/programacion-guia.jpg</imagen>
+            <titulo>Programación de servicios y procesos</titulo>
+            <contenido>El objetivo de la asignatura de Programación de servicios y procesos en el ciclo superior de DAM es proporcionar a los estudiantes los conocimientos y habilidades necesarios para diseñar, implementar y desplegar servicios y procesos en sistemas informáticos. Horas Semanales : 4 horas Horas Totales: 84 horas</contenido>
+        </ventana-modulo>
+        <modulo>
+            <imagen>imagenes/154092-OUD9IM-908-e1519685852364.jpg</imagen>
+            <titulo>Sistemas de gestión empresarial</titulo>
+        </modulo>
+        <ventana-modulo>
+            <imagen>imagenes/154092-OUD9IM-908-e1519685852364.jpg</imagen>
+            <titulo>Sistemas de gestión empresarial</titulo>
+            <contenido>La asignatura de Sistemas de gestión empresarial en el ciclo superior de DAM tiene como objetivo proporcionar a los estudiantes los conocimientos necesarios para comprender el funcionamiento de los sistemas de gestión empresarial y aprender a utilizar herramientas para su implementación. Horas Semanales : 3 horas Horas Totales: 63 horas</contenido>
+        </ventana-modulo>
+        <modulo>
+            <imagen>imagenes/FOL.jpg</imagen>
+            <titulo>Itinerario personal para la Empleabilidad II</titulo>
+        </modulo>
+        <ventana-modulo>
+            <imagen>imagenes/FOL2.jpg</imagen>
+            <titulo>Itinerario personal para la Empleabilidad II</titulo>
+            <contenido>Se centra en desarrollar competencias avanzadas para el mercado laboral, como habilidades digitales, liderazgo y trabajo en equipo. Incluye talleres prácticos, asesoría profesional y la creación de un plan de carrera adaptado a tus objetivos. Este itinerario facilita la integración en el entorno laboral y potencia tu capacidad para enfrentar nuevos desafíos profesionales.</contenido>
+        </ventana-modulo>
+        <modulo>
+            <imagen>imagenes/Sostenibilidad aplicada al sistema productivo.jpg</imagen>
+            <titulo>Sostenibilidad aplicada al sistema productivo</titulo>
+        </modulo>
+        <ventana-modulo>
+            <imagen>imagenes/Sostenibilidad aplicada al sistema productivo.jpg</imagen>
+            <titulo>Sostenibilidad aplicada al sistema productivo</titulo>
+            <contenido>Se busca equilibrar la viabilidad económica, la responsabilidad social y la protección ambiental en la producción de bienes y servicios. Implica optimizar recursos, reducir residuos y emisiones, mejorar las condiciones laborales y apoyar a las comunidades, fomentando un desarrollo empresarial responsable y a largo plazo.</contenido>
+        </ventana-modulo>
+        <modulo>
+            <imagen>imagenes/Proyecto Intermodular.jpg</imagen>
+            <titulo>Proyecto Intermodular</titulo>
+        </modulo>
+        <ventana-modulo>
+            <imagen>imagenes/Proyecto Intermodular.jpg</imagen>
+            <titulo>Proyecto Intermodular</titulo>
+            <contenido>Integra conocimientos y habilidades de diversos módulos del programa educativo en un único proyecto práctico. Permite aplicar teoría y técnicas de diferentes áreas en un contexto real o simulado, promoviendo el trabajo en equipo y la resolución creativa de problemas. Este enfoque interdisciplinario refuerza la comprensión global y prepara a los estudiantes para enfrentar desafíos complejos en el mundo profesional.</contenido>
+        </ventana-modulo>
+    </segundo-año>
+</superior>

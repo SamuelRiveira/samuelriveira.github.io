@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<basica>
+    <primer-año>
+        <modulo>
+            <imagen>/imagenes/Ciencias aplicadas.jpg</imagen>
+            <titulo>Ciencias Aplicadas I</titulo>
+        </modulo>
+        <ventana-modulo>
+            <imagen>/imagenes/Ciencias aplicadas.jpg</imagen>
+            <titulo>Ciencias Aplicadas I</titulo>
+            <contenido>Combina principios fundamentales de matemáticas, física, química y biología con aplicaciones prácticas en la vida cotidiana y la tecnología. Este curso se enfoca en el análisis y la resolución de problemas reales, desarrollando habilidades críticas y técnicas esenciales para diversas disciplinas científicas. Proporciona una base sólida para comprender cómo los conceptos científicos se integran y se aplican en contextos profesionales y académicos.</contenido>
+        </ventana-modulo>
+        <modulo>
+            <imagen>/imagenes/Comunicación y sociedad I.png</imagen>
+            <titulo>Comunicación y sociedad I</titulo>
+        </modulo>
+        <ventana-modulo>
+            <imagen>/imagenes/Comunicación y sociedad I.png</imagen>
+            <titulo>Comunicación y sociedad I</titulo>
+            <contenido>Explora cómo los procesos comunicativos influyen y moldean la cultura y las interacciones sociales. El curso analiza teorías de la comunicación, medios de comunicación y su impacto en la opinión pública y la identidad social. Fomenta habilidades en el análisis crítico de mensajes y el desarrollo de competencias para la comunicación efectiva en diversos contextos sociales y culturales.</contenido>
+        </ventana-modulo>
+        <modulo>
+            <imagen>/imagenes/Equipos Eléctricos y Electrónicos.jpg</imagen>
+            <titulo>Equipos Eléctricos y Electrónicos</titulo>
+        </modulo>
+        <ventana-modulo>
+            <imagen>/imagenes/Equipos Eléctricos y Electrónicos.jpg</imagen>
+            <titulo>Equipos Eléctricos y Electrónicos</titulo>
+            <contenido>Estudia el diseño, funcionamiento y mantenimiento de dispositivos y sistemas que utilizan electricidad y electrónica. Aborda desde conceptos básicos de circuitos y componentes hasta aplicaciones avanzadas en tecnología y automatización. El curso combina teoría y práctica, preparando a los estudiantes para enfrentar desafíos técnicos en áreas como energía, telecomunicaciones y control industrial.</contenido>
+        </ventana-modulo>
+        <modulo>
+            <imagen>/imagenes/Instalación y cuidado de redes de datos.webp</imagen>
+            <titulo>Instalación y cuidado de redes de datos</titulo>
+        </modulo>
+        <ventana-modulo>
+            <imagen>/imagenes/Instalación y cuidado de redes de datos.webp</imagen>
+            <titulo>Instalación y cuidado de redes de datos</titulo>
+            <contenido>Se enfoca en la configuración, implementación y mantenimiento de infraestructuras de red, desde redes locales hasta sistemas complejos de comunicación de datos. El curso cubre aspectos técnicos de cableado, configuración de hardware y software, y seguridad de redes. Proporciona habilidades prácticas esenciales para asegurar un rendimiento óptimo y la integridad de la información en entornos de TI.</contenido>
+        </ventana-modulo>
+        <modulo>
+            <imagen>imagenes/Que-es-la-programacion.jpg</imagen>
+            <titulo>Programación</titulo>
+        </modulo>
+        <ventana-modulo>
+            <imagen>imagenes/Que-es-la-programacion.jpg</imagen>
+            <titulo>Programación</titulo>
+            <contenido>Este módulo profesional contiene parte de la formación necesaria para desempeñar la función de programación de aplicaciones de propósito general en lenguajes orientados a objetos.</contenido>
+        </ventana-modulo>
+    </primer-año>
+    <segundo-año>
+        <modulo>
+            <imagen>/imagenes/Manejo de sistemas y componentes de PC.jpg</imagen>
+            <titulo>Manejo de sistemas y componentes de PC</titulo>
+        </modulo>
+        <ventana-modulo>
+            <imagen>/imagenes/Manejo de sistemas y componentes de PC.jpg</imagen>
+            <titulo>Manejo de sistemas y componentes de PC</titulo>
+            <contenido>Se enseña a ensamblar, configurar y mantener computadoras personales, abordando tanto hardware como software. El curso cubre la instalación de sistemas operativos, actualización de componentes, y solución de problemas técnicos. Los estudiantes desarrollan habilidades prácticas para garantizar el funcionamiento eficiente y prolongar la vida útil de los equipos informáticos.</contenido>
+        </ventana-modulo>
+        <modulo>
+            <imagen>/imagenes/Operaciones auxiliares para la configuración y la explotación.jpg</imagen>
+            <titulo>Operaciones auxiliares para la configuración y la explotación</titulo>
+        </modulo>
+        <ventana-modulo>
+            <imagen>/imagenes/Operaciones auxiliares para la configuración y la explotación.jpg</imagen>
+            <titulo>Operaciones auxiliares para la configuración y la explotación</titulo>
+            <contenido>Se centra en el soporte técnico y la gestión básica de sistemas informáticos y redes. Incluye tareas como instalación de software, mantenimiento preventivo, gestión de usuarios y seguridad básica. Este curso proporciona competencias fundamentales para optimizar el rendimiento y la seguridad de los sistemas informáticos en entornos empresariales y personales.</contenido>
+        </ventana-modulo>
+        <modulo>
+            <imagen>/imagenes/Proyecto Intermodular.jpg</imagen>
+            <titulo>Proyecto Intermodular</titulo>
+        </modulo>
+        <ventana-modulo>
+            <imagen>/imagenes/Proyecto Intermodular.jpg</imagen>
+            <titulo>Proyecto Intermodular</titulo>
+            <contenido>Integra conocimientos y habilidades de diversos módulos del programa educativo en un único proyecto práctico. Permite aplicar teoría y técnicas de diferentes áreas en un contexto real o simulado, promoviendo el trabajo en equipo y la resolución creativa de problemas. Este enfoque interdisciplinario refuerza la comprensión global y prepara a los estudiantes para enfrentar desafíos complejos en el mundo profesional.</contenido>
+        </ventana-modulo>
+        <modulo>
+            <imagen>/imagenes/Comunicación y sociedad II.jpg</imagen>
+            <titulo>Comunicación y sociedad II</titulo>
+        </modulo>
+        <ventana-modulo>
+            <imagen>/imagenes/Comunicación y sociedad II.jpg</imagen>
+            <titulo>Comunicación y sociedad II</titulo>
+            <contenido>Profundiza en el estudio de cómo los medios de comunicación y la cultura influyen en la sociedad contemporánea. Examina temas como la globalización mediática, la diversidad cultural, y el impacto de las tecnologías digitales en las interacciones sociales. Este curso promueve el análisis crítico y reflexivo de los fenómenos comunicativos y su relación con los cambios sociales y políticos a nivel global.</contenido>
+        </ventana-modulo>
+        <modulo>
+            <imagen>/imagenes/Ciencias aplicadas II.webp</imagen>
+            <titulo>Ciencias aplicadas II</titulo>
+        </modulo>
+        <ventana-modulo>
+            <imagen>/imagenes/Ciencias aplicadas II.webp</imagen>
+            <titulo>Ciencias aplicadas II</titulo>
+            <contenido>Se enfoca en la aplicación práctica de principios científicos en campos como la ingeniería, la tecnología y la salud. Incluye estudios avanzados en física, química, biología y matemáticas aplicadas a situaciones reales y problemas técnicos. Este curso desarrolla habilidades analíticas y resolutivas fundamentales para la innovación y el desarrollo en diversas industrias y disciplinas científicas.</contenido>
+        </ventana-modulo>
+        <modulo>
+            <imagen>imagenes/Que-es-la-programacion.jpg</imagen>
+            <titulo>Programación</titulo>
+        </modulo>
+        <ventana-modulo>
+            <imagen>imagenes/Que-es-la-programacion.jpg</imagen>
+            <titulo>Programación</titulo>
+            <contenido>Este módulo profesional contiene parte de la formación necesaria para desempeñar la función de programación de aplicaciones de propósito general en lenguajes orientados a objetos.</contenido>
+        </ventana-modulo>
+    </segundo-año>
+</basica>

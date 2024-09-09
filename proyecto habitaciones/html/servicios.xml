@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<servicios>
+    <servicio>
+        <logo>wifi</logo>
+        <contenido>Wifi Gratis</contenido>
+    </servicio>
+    <servicio>
+        <logo>car</logo>
+        <contenido>Parking gratis</contenido>
+    </servicio>
+    <servicio>
+        <logo>logo-no-smoking</logo>
+        <contenido>Habitaciones sin humo</contenido>
+    </servicio>
+    <servicio>
+        <logo>cafe</logo>
+        <contenido>Tetera/cafetera</contenido>
+    </servicio>
+    <servicio>
+        <logo>home</logo>
+        <contenido>Zona de estar</contenido>
+    </servicio>
+    <servicio>
+        <logo>tv</logo>
+        <contenido>Equipamiento audiovisual</contenido>
+    </servicio>
+    <servicio>
+        <logo>water</logo>
+        <contenido>Baño privado</contenido>
+    </servicio>
+    <servicio>
+        <logo>rose</logo>
+        <contenido>Patio/Terraza</contenido>
+    </servicio>
+</servicios>
+
