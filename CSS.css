@@ -210,10 +210,35 @@ hr{
     flex-direction: column;
     color: white;
     margin-top: 64px;
+    justify-content: center;
+    align-items: space-between;
 }
 
 #grid-tecnologias{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    background-color: lightskyblue;
+    gap: 64px;
+}
+
+.contenedor-tecnologia{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    padding: 15px;
+    background-color: rgb(44, 56, 68);
+    border-radius: 10px;
+    box-shadow: #000000 2.3px 2.3px 2.3px;
+    transition: .2s ease;
+    cursor: pointer;
+}
+
+.contenedor-tecnologia:hover{
+    translate: 0px -5px;
+}
+
+.contenedor-tecnologia img{
+    width: 50px;
+    height: 50px;
 }
