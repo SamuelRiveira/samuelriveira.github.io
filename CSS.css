@@ -14,7 +14,7 @@ body{
 }
 
 section{
-    width: 38vw;
+    width: 768px;
     height: 100%;
     overflow: hidden;
     margin-top: 72px;
@@ -25,7 +25,7 @@ section{
 
 nav{
     height: 72px;
-    width: 38vw;
+    width: 768px;
     backdrop-filter: blur(15px);
     background: transparent;
     position: fixed;
@@ -181,7 +181,6 @@ hr{
     translate: 0px -5px;
     .icono-visitar{
         rotate: 60deg;
-        transport
     }
 }
 
@@ -248,4 +247,52 @@ hr{
 .contenedor-tecnologia img{
     width: 50px;
     height: 50px;
+}
+
+@media (max-width: 815px) {
+    #perfil {
+        grid-template-columns: 1fr; /* Cambiar a una sola columna */
+        grid-template-rows: auto; /* Ajustar las filas automáticamente */
+        text-align: center; /* Centramos el contenido */
+    }
+    
+    #perfil-imagen {
+        margin: 0 auto; /* Centramos la imagen */
+    }
+    
+    .proyecto {
+        grid-template-columns: 1fr; /* Cambiamos el grid a una sola columna para los proyectos */
+    }
+
+    nav {
+        width: 100%; /* Para asegurar que el nav ocupe el ancho completo en pantallas pequeñas */
+    }
+
+    hr{
+        margin-top: 200px;
+    }
+
+    #perfil-info h1{
+        font-size: 25px;
+    }
+
+    #perfil-info p{
+        font-size: 15px;
+    }
+
+    #perfil-info{
+        align-items: center;
+    }
+
+    #curriculum{
+        padding: 2% 3%;
+    }
+
+    section{
+        margin: 72px 20px 32px 20px;
+    }
+
+    #grid-tecnologias{
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
