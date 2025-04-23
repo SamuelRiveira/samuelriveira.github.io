@@ -15,7 +15,7 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="text/javascript">
         (function() {
-            // Reemplaza "tu_user_id" con tu User ID de EmailJS
+            // Inicializar EmailJS
             emailjs.init("service_jixpn2w");
         })();
     </script>
@@ -210,7 +210,7 @@
                 }
             });
             
-            // Verificar si hay actividades seleccionadas para el envío automático de correo
+            // Verificar si hay actividades seleccionadas  para el envío automático de correo
             if (selectedActivities.length > 0 && !autoEmailSent) {
                 // Verifica que el gasto esté dentro del presupuesto
                 if (spent <= totalBudget) {
@@ -312,7 +312,7 @@
             
             // Enviar el correo usando EmailJS
             // Reemplaza "tu_service_id" y "tu_template_id" con tus valores reales
-            emailjs.send('service_jixpn2w', 'service_jixpn2w', templateParams)
+            emailjs.send('service_jixpn2w', 'template_srhgjyu', templateParams)
                 .then(function(response) {
                     console.log('EMAIL ENVIADO!', response.status, response.text);
                     autoEmailStatus.innerHTML = '<p style="color: green;">¡Correo enviado automáticamente con éxito!</p>';
@@ -339,22 +339,51 @@
                 return;
             }
             
-            // Preparar el contenido del correo electrónico
-            let emailSubject = 'Selección de Actividades en Lanzarote';
-            let emailBody = 'Actividades seleccionadas:\n\n';
+            // Mostrar estado de envío
+            autoEmailStatus.style.display = 'block';
+            autoEmailStatus.innerHTML = '<p>Enviando tu selección por correo...</p>';
             
-            selectedActivities.forEach(activityId => {
-                const activity = activities.find(a => a.id === activityId);
-                emailBody += `${activity.name} - €${activity.price}\n`;
-            });
+            // Preparar el contenido del correo para EmailJS
+            let actividadesHTML = selectedActivities.map(id => {
+                const activity = activities.find(a => a.id === id);
+                return `${activity.name} - €${activity.price}`;
+            }).join('<br>');
             
-            emailBody += `\nTotal: €${spent} de un presupuesto de €${totalBudget}`;
+            // Preparar los parámetros para EmailJS
+            const templateParams = {
+                to_email: emailRecipient,
+                actividadesSeleccionadas: actividadesHTML,
+                precioTotal: spent,
+                presupuesto: totalBudget
+            };
             
-            // Enviar correo electrónico usando mailto (respaldo si EmailJS falla)
-            const mailtoUrl = `mailto:${emailRecipient}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
-            window.location.href = mailtoUrl;
-            
-            alert('¡Gracias por tu selección! Se enviará un correo electrónico con los detalles de tu planificación.');
+            // Enviar el correo usando EmailJS
+            emailjs.send('service_jixpn2w', 'template_srhgjyu', templateParams)
+                .then(function(response) {
+                    console.log('EMAIL ENVIADO!', response.status, response.text);
+                    autoEmailStatus.innerHTML = '<p style="color: green;">¡Tu selección ha sido enviada con éxito!</p>';
+                    alert('¡Gracias por tu selección! Se ha enviado un correo electrónico con los detalles de tu planificación.');
+                }, function(error) {
+                    console.log('ERROR AL ENVIAR EMAIL:', error);
+                    autoEmailStatus.innerHTML = '<p style="color: red;">Error al enviar correo. Intentando método alternativo...</p>';
+                    
+                    // Plan B: usar mailto como respaldo si EmailJS falla
+                    let emailSubject = 'Selección de Actividades en Lanzarote';
+                    let emailBody = 'Actividades seleccionadas:\n\n';
+                    
+                    selectedActivities.forEach(activityId => {
+                        const activity = activities.find(a => a.id === activityId);
+                        emailBody += `${activity.name} - €${activity.price}\n`;
+                    });
+                    
+                    emailBody += `\nTotal: €${spent} de un presupuesto de €${totalBudget}`;
+                    
+                    // Redirigir a Gmail directamente
+                    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(emailRecipient)}&su=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+                    window.open(gmailUrl, '_blank');
+                    
+                    alert('Se abrirá Gmail para completar el envío de tu selección.');
+                });
         }
 
         function goBack() {
