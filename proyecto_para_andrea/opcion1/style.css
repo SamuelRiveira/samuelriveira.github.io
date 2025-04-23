@@ -1,25 +1,25 @@
 * {
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
-    max-width: 100vw;
-    max-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
     overflow: hidden;
+    position: fixed;
 }
 
 body {
     font-family: 'Comic Sans MS', cursive, sans-serif;
     background: linear-gradient(to bottom right, #66c2ff, #c2e9ff);
-    margin: 0;
-    padding: 0;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color: #333;
-    max-width: 100vw;
-    max-height: 100vh;
-    overflow: hidden;
 }
 
 .container {
@@ -31,6 +31,8 @@ body {
     max-width: 800px;
     width: 90%;
     margin: 15px;
+    max-height: 90vh;
+    overflow-y: auto;
 }
 
 h1 {
@@ -43,6 +45,7 @@ h1 {
 @media (max-width: 480px) {
     .container {
         padding: 1rem;
+        width: 95%;
     }
     
     h1 {
