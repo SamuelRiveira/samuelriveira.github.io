@@ -1,0 +1,177 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: linear-gradient(to bottom right, #66c2ff, #c2e9ff);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+}
+
+.container {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 90%;
+    margin: 15px;
+}
+
+h1 {
+    color: #0066cc;
+    font-size: 2.2rem;
+    margin-bottom: 0.8rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+    }
+}
+
+.message {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+@media (max-width: 480px) {
+    .message {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .message p {
+        margin: 0.5rem 0;
+    }
+}
+
+/* Carrusel de imágenes */
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+    height: 350px;
+}
+
+@media (max-width: 480px) {
+    .carousel-inner {
+        height: 250px;
+    }
+}
+
+.carousel-item {
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-item img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #333;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 480px) {
+    .carousel-control {
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
+    }
+}
+
+.carousel-control:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.carousel-control-prev {
+    left: 10px;
+}
+
+.carousel-control-next {
+    right: 10px;
+}
+
+.btn-back {
+    display: inline-block;
+    padding: 10px 25px;
+    background: linear-gradient(to bottom right, #4da6ff, #66c2ff);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(77, 166, 255, 0.4);
+}
+
+.btn-back:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(77, 166, 255, 0.6);
+}
+
+@media (max-width: 480px) {
+    .btn-back {
+        padding: 8px 20px;
+        font-size: 0.9rem;
+        margin-top: 1rem;
+    }
+}
+
+/* Iconos de cumpleaños */
+.birthday-icons {
+    position: absolute;
+    z-index: -1;
+    opacity: 0.1;
+    font-size: 3rem;
+}
+
+@media (max-width: 480px) {
+    .birthday-icons {
+        font-size: 2rem;
+    }
+}
