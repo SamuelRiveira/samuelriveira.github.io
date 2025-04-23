@@ -13,6 +13,44 @@
     <link rel="shortcut icon" href="/proyecto habitaciones/img/viajar.png" type="image/x-icon">
 </head>
 <body>
-    Cumpleaños de Alexandra
+    <div class="container">
+        <h1>¡Feliz Cumpleaños!</h1>
+        <div class="message">Elige una opción para ver tu sorpresa especial</div>
+        <div class="buttons">
+            <button class="btn" onclick="window.location.href='opcion1.html'">Opción 1</button>
+            <button class="btn" onclick="window.location.href='opcion2.html'">Opción 2</button>
+        </div>
+    </div>
+    
+    <script>
+        // Crear confeti animado
+        function createConfetti() {
+            const colors = ['#ff61a6', '#ffb3d9', '#ffcce6', '#ff8cc2', '#ff1a75', '#ffffe0', '#ffd700'];
+            
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.animationDelay = Math.random() * 5 + 's';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                
+                // Formas aleatorias para el confeti
+                const shape = Math.floor(Math.random() * 3);
+                if (shape === 0) {
+                    confetti.style.borderRadius = '50%'; // Círculo
+                } else if (shape === 1) {
+                    confetti.style.width = '10px';
+                    confetti.style.height = '25px';
+                } else {
+                    confetti.style.transform = 'rotate(45deg)';
+                }
+                
+                document.body.appendChild(confetti);
+            }
+        }
+        
+        // Llamar a la función cuando la página cargue
+        window.onload = createConfetti;
+    </script>
 </body>
 </html>
