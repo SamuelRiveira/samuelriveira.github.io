@@ -205,24 +205,10 @@ h1 {
         width: 100%;
     }
     
-    .character {
-        flex-direction: column;
-        gap: 20px;
-    }
-    
     .speech-bubble {
         order: 2;
         margin-top: 15px;
-    }
-    
-    .speech-bubble:after {
-        top: 0;
-        left: 50%;
-        border: 10px solid transparent;
-        border-bottom-color: #ffffff;
-        border-top: 0;
-        margin-left: -10px;
-        margin-top: -10px;
+        max-width: 168px;
     }
     
     .character-img {
