@@ -14,123 +14,153 @@
 </head>
 <body>
     <div class="container">
-        <h1>¡Feliz Cumpleaños, Estrella!</h1>
+        <header>
+            <h1>Tu verdadero regalo</h1>
+            <p>¿Cómo quieres gastar tus 50€?</p>
+        </header>
         
-        <div class="message">
-            <p>Hoy celebramos un día muy especial: ¡tu cumpleaños! Quería sorprenderte con algo diferente que muestre lo mucho que significas para mí. Cada recuerdo juntas es un tesoro que guardo en mi corazón.</p>
+        <div class="budget-info">
+            <p>Presupuesto total:</p>
+            <div class="total-budget">50€</div>
+            <p>Te quedan:</p>
+            <div id="remaining" class="remaining">50€</div>
         </div>
         
-        <div class="carousel">
-            <div class="polaroid-container">
-                <!-- Aquí puedes reemplazar las imágenes con las tuyas propias -->
-                <div class="polaroid active">
-                    <img src="/api/placeholder/500/350" alt="Momento especial 1">
-                    <div class="caption">Nuestro primer viaje juntas</div>
+        <form id="budgetForm" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="a9485d88-2e71-421b-8d96-af493e53d511">
+            <input type="hidden" name="subject" value="Distribución de Presupuesto - 50€">
+            <input type="hidden" name="nombre" value="Alexandra">
+            <input type="hidden" name="correo" value="samuelriveiraescudero@gmail.com">
+            
+            <div class="activities">
+                <div class="activity-card">
+                    <div class="activity-header">
+                        <h3 class="activity-title">Ir de compras</h3>
+                        <div id="shopping-amount" class="activity-amount">0€</div>
+                    </div>
+                    <div class="activity-image">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3225/3225194.png" alt="Icono de compras">
+                    </div>
+                    <div class="slider-container">
+                        <input type="range" id="shopping-slider" name="shopping" min="0" max="50" value="0" step="1">
+                        <div class="amount-info">
+                            <span>0€</span>
+                            <span>50€</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="polaroid next">
-                    <img src="/api/placeholder/500/350" alt="Momento especial 2">
-                    <div class="caption">Aquella fiesta inolvidable</div>
-                </div>
-                <div class="polaroid">
-                    <img src="/api/placeholder/500/350" alt="Momento especial 3">
-                    <div class="caption">Nuestra aventura en la montaña</div>
-                </div>
-                <div class="polaroid">
-                    <img src="/api/placeholder/500/350" alt="Momento especial 4">
-                    <div class="caption">Siempre juntas en las buenas y en las malas</div>
+                
+                <div class="activity-card">
+                    <div class="activity-header">
+                        <h3 class="activity-title">Ir a comer</h3>
+                        <div id="food-amount" class="activity-amount">0€</div>
+                    </div>
+                    <div class="activity-image">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1147/1147805.png" alt="Icono de comida">
+                    </div>
+                    <div class="slider-container">
+                        <input type="range" id="food-slider" name="food" min="0" max="50" value="0" step="1">
+                        <div class="amount-info">
+                            <span>0€</span>
+                            <span>50€</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <button class="carousel-control carousel-control-prev" onclick="changeSlide(-1)">&#10094;</button>
-            <button class="carousel-control carousel-control-next" onclick="changeSlide(1)">&#10095;</button>
-        </div>
-        
-        <a href="/proyecto_para_andrea/index.html" class="btn-back">Volver</a>
+            
+            <textarea id="budgetDistribution" name="mensaje" class="hidden"></textarea>
+            
+            <div class="contact-form">
+                <button type="submit" class="btn-submit" id="submitBtn">¡Enviar mis elecciones!</button>
+            </div>
+        </form>
     </div>
     
     <script>
-        let currentSlide = 0;
-        const polaroids = document.querySelectorAll('.polaroid');
-        const totalSlides = polaroids.length;
+        // Variables para el presupuesto
+        const totalBudget = 50;
+        let shoppingAmount = 0;
+        let foodAmount = 0;
+        let remaining = totalBudget;
         
-        // Función para actualizar clases
-        function updateClasses() {
-            for (let i = 0; i < totalSlides; i++) {
-                polaroids[i].className = 'polaroid';
-                
-                if (i === currentSlide) {
-                    polaroids[i].classList.add('active');
-                } else if (i === (currentSlide + 1) % totalSlides) {
-                    polaroids[i].classList.add('next');
-                } else if (i === (currentSlide - 1 + totalSlides) % totalSlides) {
-                    polaroids[i].classList.add('prev');
-                }
-            }
-        }
+        // Elementos DOM
+        const shoppingSlider = document.getElementById('shopping-slider');
+        const foodSlider = document.getElementById('food-slider');
+        const shoppingAmountElement = document.getElementById('shopping-amount');
+        const foodAmountElement = document.getElementById('food-amount');
+        const remainingElement = document.getElementById('remaining');
+        const submitBtn = document.getElementById('submitBtn');
+        const budgetDistributionElement = document.getElementById('budgetDistribution');
         
-        // Función para cambiar de diapositiva
-        function changeSlide(direction) {
-            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
-            updateClasses();
-        }
-        
-        // Cambio automático de diapositivas cada 5 segundos
-        setInterval(() => {
-            changeSlide(1);
-        }, 5000);
-        
-        // Soporte para gestos táctiles en el carrusel
-        const carousel = document.querySelector('.carousel');
-        let touchStartX = 0;
-        let touchEndX = 0;
-        
-        carousel.addEventListener('touchstart', function(e) {
-            touchStartX = e.changedTouches[0].screenX;
-        }, false);
-        
-        carousel.addEventListener('touchend', function(e) {
-            touchEndX = e.changedTouches[0].screenX;
-            handleSwipe();
-        }, false);
-        
-        function handleSwipe() {
-            if (touchEndX < touchStartX - 50) {
-                changeSlide(1); // Deslice a la izquierda
-            }
-            if (touchEndX > touchStartX + 50) {
-                changeSlide(-1); // Deslice a la derecha
-            }
-        }
-        
-        // Crear globos decorativos
-        function createBalloons() {
-            const colors = ['#ff9248', '#ffb384', '#ff7e28', '#ffcc99', '#ff6600'];
-            const balloonCount = window.innerWidth < 480 ? 8 : 12; // Menos globos en móvil
+        // Función para actualizar los valores y la interfaz
+        function updateValues() {
+            shoppingAmount = parseInt(shoppingSlider.value);
+            foodAmount = parseInt(foodSlider.value);
             
-            for (let i = 0; i < balloonCount; i++) {
-                const balloon = document.createElement('div');
-                balloon.className = 'balloon';
-                balloon.style.left = Math.random() * 100 + 'vw';
-                balloon.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                balloon.style.animationDelay = Math.random() * 10 + 's';
-                balloon.style.animationDuration = (Math.random() * 10 + 10) + 's';
-                
-                // Tamaños más pequeños para móvil
-                if (window.innerWidth < 480) {
-                    balloon.style.width = (Math.random() * 15 + 15) + 'px';
-                    balloon.style.height = (Math.random() * 20 + 20) + 'px';
-                } else {
-                    balloon.style.width = (Math.random() * 20 + 20) + 'px';
-                    balloon.style.height = (Math.random() * 30 + 30) + 'px';
+            // Verificar si excede el presupuesto
+            if (shoppingAmount + foodAmount > totalBudget) {
+                // Si ajustamos el slider de compras, ajustamos el de comida
+                if (document.activeElement === shoppingSlider) {
+                    foodAmount = Math.max(0, totalBudget - shoppingAmount);
+                    foodSlider.value = foodAmount;
+                } 
+                // Si ajustamos el slider de comida, ajustamos el de compras
+                else {
+                    shoppingAmount = Math.max(0, totalBudget - foodAmount);
+                    shoppingSlider.value = shoppingAmount;
                 }
-                
-                document.body.appendChild(balloon);
             }
+            
+            // Actualizar la visualización
+            shoppingAmountElement.textContent = shoppingAmount + '€';
+            foodAmountElement.textContent = foodAmount + '€';
+            
+            // Calcular lo que queda
+            remaining = totalBudget - (shoppingAmount + foodAmount);
+            remainingElement.textContent = remaining + '€';
+            
+            // Cambiar el color según lo que queda (gradient desde 50 a 0)
+            const percentage = remaining / totalBudget; // Porcentaje de presupuesto restante
+            const hue = percentage * 120; // 120 es verde, 0 es rojo en HSL
+            remainingElement.style.color = `hsl(${hue}, 80%, 45%)`;
+            
+            // Generar mensaje para el envío
+            let message = `Distribución de presupuesto:\n\n`;
+            message += `- Ir de compras: ${shoppingAmount}€\n`;
+            message += `- Ir a comer: ${foodAmount}€\n\n`;
+            message += `Total asignado: ${shoppingAmount + foodAmount}€\n`;
+            message += `Presupuesto restante: ${remaining}€`;
+            
+            budgetDistributionElement.value = message;
         }
         
-        window.onload = function() {
-            updateClasses();
-            createBalloons();
-        };
+        // Eventos para los sliders
+        shoppingSlider.addEventListener('input', updateValues);
+        foodSlider.addEventListener('input', updateValues);
+        
+        // Inicializar la interfaz
+        updateValues();
+        
+        // Evento para enviar el formulario
+        document.getElementById('budgetForm').addEventListener('submit', function(event) {
+            // Verificar si ha asignado algo de presupuesto
+            if (shoppingAmount === 0 && foodAmount === 0) {
+                event.preventDefault();
+                alert('Por favor, asigna algo de presupuesto a al menos una actividad.');
+                return;
+            }
+        });
+        
+        // Animación al cargar la página
+        document.addEventListener('DOMContentLoaded', function() {
+            const header = document.querySelector('header');
+            header.style.opacity = '0';
+            
+            setTimeout(function() {
+                header.style.transition = 'opacity 1s ease-out';
+                header.style.opacity = '1';
+            }, 300);
+        });
     </script>
 </body>
 </html>
