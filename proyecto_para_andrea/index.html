@@ -13,13 +13,26 @@
     <link rel="shortcut icon" href="/proyecto habitaciones/img/viajar.png" type="image/x-icon">
 </head>
 <body>
-    <div class="container">
+    <!-- Pantalla de introducción -->
+    <div class="intro-container">
+        <h1>¡Felices 18!</h1>
+        <img src="https://png.pngtree.com/thumb_back/fh260/background/20230527/pngtree-two-girls-hugged-together-at-sunset-image_2678585.jpg" alt="Foto de amigas" class="intro-img pulse" id="birthdayImage">
+        <div class="character">
+            <img src="/proyecto_para_andrea/imagenes/Tamaki-removebg-preview.png" alt="Personaje" class="character-img">
+            <div class="speech-bubble">
+                ¿Qué pasará si le damos a la foto?
+            </div>
+        </div>
+    </div>
+    
+    <!-- Contenido principal (oculto inicialmente) -->
+    <div class="main-container" id="mainContent">
         <h1>¡Feliz Cumpleaños!</h1>
         <div class="message">Elige una opción para ver tu sorpresa especial</div>
         <div class="buttons">
-            <button class="btn" onclick="window.location.href='/proyecto_para_andrea/opcion1/index.html'">Opción 1</button>
-            <button class="btn" onclick="window.location.href='/proyecto_para_andrea/opcion2/index.html'">Opción 2</button>
-            <button class="btn" onclick="window.location.href='/proyecto_para_andrea/opcion3/index.html'">Opción 3</button>
+            <button class="btn" onclick="window.location.href='/proyecto_para_andrea/opcion1/index.html'">¿Qué haremos este último verano en la isla?</button>
+            <button class="btn" onclick="window.location.href='/proyecto_para_andrea/opcion2/index.html'">Tu verdadero regalo</button>
+            <button class="btn" onclick="window.location.href='/proyecto_para_andrea/opcion3/index.html'">Nuestro tiempo juntas</button>
         </div>
     </div>
     
@@ -50,8 +63,32 @@
             }
         }
         
-        // Llamar a la función cuando la página cargue
+        // Iniciar confeti cuando la página cargue
         window.onload = createConfetti;
+        
+        // Añadir funcionalidad al hacer clic en la imagen
+        document.getElementById('birthdayImage').addEventListener('click', function() {
+            // Ocultar la pantalla de introducción
+            document.querySelector('.intro-container').style.opacity = '0';
+            document.querySelector('.intro-container').style.transform = 'scale(0.8)';
+            
+            // Mostrar el contenido principal con animación
+            setTimeout(function() {
+                document.querySelector('.intro-container').style.display = 'none';
+                document.getElementById('mainContent').style.display = 'block';
+                
+                // Trigger reflow para que la animación funcione
+                void document.getElementById('mainContent').offsetWidth;
+                
+                document.getElementById('mainContent').style.opacity = '1';
+                document.getElementById('mainContent').style.transform = 'scale(1)';
+                
+                // Crear más confeti para la celebración
+                for (let i = 0; i < 3; i++) {
+                    setTimeout(createConfetti, i * 500);
+                }
+            }, 500);
+        });
     </script>
 </body>
 </html>
