@@ -14,93 +14,108 @@
 </head>
 <body>
     <div class="container">
-        <h1>¡Feliz Cumpleaños, Amiga!</h1>
+        <header>
+            <h1>¡Felices 18 Alexandra!</h1>
+            <p>Elige lo que quieres que hagamos este verano</p>
+        </header>
         
-        <div class="message">
-            <p>En este día tan especial, quiero desearte el cumpleaños más feliz del mundo. Cada momento contigo es un regalo, y espero que este nuevo año de vida esté lleno de alegría, amor y sueños cumplidos.</p>
-            <p>¡Gracias por ser una amiga maravillosa!</p>
-        </div>
+        <h2>Nuestros Planes de Verano</h2>
         
-        <div class="carousel">
-            <div class="carousel-inner">
-                <!-- Aquí puedes reemplazar las imágenes con las tuyas propias -->
-                <div class="carousel-item">
-                    <img src="/api/placeholder/600/400" alt="Recuerdo 1">
+        <form id="birthdayForm" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="a9485d88-2e71-421b-8d96-af493e53d511">
+            <input type="hidden" name="subject" value="Selección de Actividades de Verano - Alexandra">
+            <input type="hidden" name="nombre" value="Alexandra">
+            <input type="hidden" name="correo" value="samuelriveiraescudero@gmail.com">
+            
+            <div class="activities">
+                <div class="activity-card">
+                    <img src="/proyecto_para_andrea/opcion1/imagenes/volei-playa.jpg" alt="Torneo de voley playa" class="activity-image">
+                    <div class="activity-info">
+                        <div class="activity-checkbox">
+                            <input type="checkbox" id="voley" name="actividades" value="Torneo de voley playa">
+                            <label for="voley">Torneo de voley playa</label>
+                        </div>
+                    </div>
                 </div>
-                <div class="carousel-item">
-                    <img src="/api/placeholder/600/400" alt="Recuerdo 2">
+                
+                <div class="activity-card">
+                    <img src="/proyecto_para_andrea/opcion1/imagenes/ir-de-compras.png" alt="Ir de compras" class="activity-image">
+                    <div class="activity-info">
+                        <div class="activity-checkbox">
+                            <input type="checkbox" id="compras" name="actividades" value="Ir de compras">
+                            <label for="compras">Ir de compras</label>
+                        </div>
+                    </div>
                 </div>
-                <div class="carousel-item">
-                    <img src="/api/placeholder/600/400" alt="Recuerdo 3">
+                
+                <div class="activity-card">
+                    <img src="/proyecto_para_andrea/opcion1/imagenes/pijamada.jpg" alt="Pijamada" class="activity-image">
+                    <div class="activity-info">
+                        <div class="activity-checkbox">
+                            <input type="checkbox" id="pijamada" name="actividades" value="Hacer pijamadas y quedarnos despiertas todo el día">
+                            <label for="pijamada">Hacer pijamadas y quedarnos despiertas todo el día</label>
+                        </div>
+                    </div>
                 </div>
-                <div class="carousel-item">
-                    <img src="/api/placeholder/600/400" alt="Recuerdo 4">
+                
+                <div class="activity-card">
+                    <img src="/proyecto_para_andrea/opcion1/imagenes/maquillaje.jpg" alt="Maquillaje" class="activity-image">
+                    <div class="activity-info">
+                        <div class="activity-checkbox">
+                            <input type="checkbox" id="maquillaje" name="actividades" value="Maquillarnos mútuamente">
+                            <label for="maquillaje">Maquillarnos mútuamente</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="activity-card">
+                    <img src="/proyecto_para_andrea/opcion1/imagenes/peinados amigas.jpg" alt="Peinados" class="activity-image">
+                    <div class="activity-info">
+                        <div class="activity-checkbox">
+                            <input type="checkbox" id="peinados" name="actividades" value="Prueba de peinados">
+                            <label for="peinados">Prueba de peinados</label>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <button class="carousel-control carousel-control-prev" onclick="moveCarousel(-1)">&#10094;</button>
-            <button class="carousel-control carousel-control-next" onclick="moveCarousel(1)">&#10095;</button>
-        </div>
-        
-        <a href="/proyecto_para_andrea/index.html" class="btn-back">Volver</a>
+            
+            <textarea id="selectedActivities" name="mensaje" class="selected-activities"></textarea>
+            
+            <div class="contact-form">
+                <button type="submit" class="btn-submit">¡Enviar mis elecciones!</button>
+            </div>
+        </form>
     </div>
     
     <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.carousel-item');
-        const totalSlides = slides.length;
-        
-        // Función para mover el carrusel
-        function moveCarousel(direction) {
-            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
-            document.querySelector('.carousel-inner').style.transform = `translateX(-${currentSlide * 100}%)`;
-        }
-        
-        // Cambio automático de diapositivas cada 4 segundos
-        setInterval(() => {
-            moveCarousel(1);
-        }, 4000);
-        
-        // Soporte para gestos táctiles en el carrusel
-        const carousel = document.querySelector('.carousel');
-        let touchStartX = 0;
-        let touchEndX = 0;
-        
-        carousel.addEventListener('touchstart', function(e) {
-            touchStartX = e.changedTouches[0].screenX;
-        }, false);
-        
-        carousel.addEventListener('touchend', function(e) {
-            touchEndX = e.changedTouches[0].screenX;
-            handleSwipe();
-        }, false);
-        
-        function handleSwipe() {
-            if (touchEndX < touchStartX - 50) {
-                moveCarousel(1); // Deslice a la izquierda
+        document.getElementById('birthdayForm').addEventListener('submit', function(event) {
+            // Recopilar actividades seleccionadas
+            const checkboxes = document.querySelectorAll('input[name="actividades"]:checked');
+            if (checkboxes.length === 0) {
+                event.preventDefault();
+                alert('Por favor, selecciona al menos una actividad para este verano.');
+                return;
             }
-            if (touchEndX > touchStartX + 50) {
-                moveCarousel(-1); // Deslice a la derecha
-            }
-        }
-        
-        // Añadir iconos de cumpleaños aleatorios
-        function addBirthdayIcons() {
-            const icons = ['🎂', '🎁', '🎈', '🎉', '🎊', '🥳', '✨', '🎯'];
-            const body = document.body;
-            const iconCount = window.innerWidth < 480 ? 12 : 20; // Menos iconos en móvil
             
-            for (let i = 0; i < iconCount; i++) {
-                const icon = document.createElement('div');
-                icon.className = 'birthday-icons';
-                icon.textContent = icons[Math.floor(Math.random() * icons.length)];
-                icon.style.left = Math.random() * 100 + 'vw';
-                icon.style.top = Math.random() * 100 + 'vh';
-                icon.style.transform = `rotate(${Math.random() * 360}deg)`;
-                body.appendChild(icon);
-            }
-        }
+            let selectedActivities = 'Actividades seleccionadas por Alexandra:\n';
+            checkboxes.forEach(function(checkbox) {
+                selectedActivities += '- ' + checkbox.value + '\n';
+            });
+            
+            // Añadir al campo oculto
+            document.getElementById('selectedActivities').value = selectedActivities;
+        });
         
-        window.onload = addBirthdayIcons;
+        // Animación al cargar la página
+        document.addEventListener('DOMContentLoaded', function() {
+            const header = document.querySelector('header');
+            header.style.opacity = '0';
+            
+            setTimeout(function() {
+                header.style.transition = 'opacity 1s ease-out';
+                header.style.opacity = '1';
+            }, 300);
+        });
     </script>
 </body>
 </html>
