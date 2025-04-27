@@ -6,7 +6,7 @@
 }
 
 body {
-    background: linear-gradient(to bottom right, #ff9ae1, #ffd3eb);
+    background: linear-gradient(to bottom right, #65af54, #76c063);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -47,7 +47,7 @@ body {
 }
 
 h1 {
-    color: #e83e8c;
+    color: #317d25;
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
@@ -61,10 +61,10 @@ h1 {
     object-fit: cover;
     margin: 20px auto;
     border-radius: 12px;
-    border: 5px solid #ff66c4;
+    border: 5px solid #438e35;
     cursor: pointer;
     transition: transform 0.3s ease;
-    box-shadow: 0 5px 15px rgba(242, 97, 170, 0.6);
+    box-shadow: 0 5px 15px rgba(67, 142, 53, 0.6);
 }
 
 .intro-img:hover {
@@ -122,20 +122,20 @@ h1 {
 
 .btn {
     padding: 12px 28px;
-    background: linear-gradient(to bottom right, #ff66c4, #ff9ae1);
+    background: linear-gradient(to bottom right, #317d25, #438e35);
     color: white;
     border: none;
     border-radius: 50px;
     font-size: 1.1rem;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(242, 97, 170, 0.4);
+    box-shadow: 0 5px 15px rgba(49, 125, 37, 0.4);
     margin-bottom: 10px;
 }
 
 .btn:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(242, 97, 170, 0.6);
+    box-shadow: 0 10px 20px rgba(49, 125, 37, 0.6);
 }
 
 .message {

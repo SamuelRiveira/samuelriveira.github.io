@@ -8,7 +8,7 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f9f3f8;
+    background-color: #76c063;
     color: #333;
     position: relative;
     width: 100%;
@@ -23,13 +23,14 @@ body {
     overflow: hidden;
     border-radius: 15px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    background-color: #f3f8f3;
 }
 
 .carousel-slide {
     display: none;
     width: 100%;
     padding: 30px 20px;
-    background: linear-gradient(135deg, #fff8fd, #fff);
+    background: linear-gradient(135deg, #f8fff8, #fff);
 }
 
 .carousel-slide.active {
@@ -80,10 +81,10 @@ body {
 h2 {
     font-size: 26px;
     margin-bottom: 18px;
-    color: #ff66b2;
+    color: #317d25;
     text-shadow: 1px 1px 0px #fff;
     text-align: left;
-    border-bottom: 2px solid #ffcce6;
+    border-bottom: 2px solid #65af54;
     padding-bottom: 8px;
     max-width: 100%;
 }
@@ -105,7 +106,7 @@ p {
 }
 
 .control-btn {
-    background-color: #ff66b2;
+    background-color: #317d25;
     color: white;
     border: none;
     width: 40px;
@@ -115,11 +116,11 @@ p {
     cursor: pointer;
     font-size: 18px;
     transition: all 0.3s ease;
-    box-shadow: 0 3px 8px rgba(255, 102, 178, 0.3);
+    box-shadow: 0 3px 8px rgba(49, 125, 37, 0.3);
 }
 
 .control-btn:hover {
-    background-color: #ff4499;
+    background-color: #438e35;
     transform: scale(1.1);
 }
 
@@ -141,7 +142,7 @@ p {
 }
 
 .dot.active {
-    background-color: #ff66b2;
+    background-color: #317d25;
     transform: scale(1.2);
 }
 

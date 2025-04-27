@@ -1,9 +1,9 @@
 :root {
-    --color1: #ffa6c5;
-    --color2: #ffb8d3;
-    --color3: #ffcae2;
-    --color4: #ffddf0;
-    --color5: #ffefff;
+    --color1: #317d25;
+    --color2: #438e35;
+    --color3: #549e44;
+    --color4: #65af54;
+    --color5: #76c063;
     --text-color: #333;
 }
 
@@ -96,7 +96,7 @@ h1 {
 
 .activity-title {
     font-size: 1.5rem;
-    color: var(--color1);
+    color: var(--text-color);
 }
 
 .activity-amount {
