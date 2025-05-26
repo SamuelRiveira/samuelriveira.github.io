@@ -62,7 +62,7 @@ export class API{
                 email,
                 password,
                 options: {
-                    emailRedirectTo: window.location.origin + '/Frontend/index.html'
+                    emailRedirectTo: window.location.origin + 'index.html'
                 }
             });
             
@@ -158,14 +158,14 @@ export class API{
             }
             
             // Forzar recarga para limpiar cualquier estado en memoria
-            window.location.href = '/Frontend/';
+            window.location.href = '';
             
             // Retornamos éxito ya que hemos limpiado todo lo local
             return { success: true };
         } catch (error) {
             console.error('Error inesperado en cerrarSesion:', error);
             // Aún así redirigimos al login
-            window.location.href = '/Frontend/';
+            window.location.href = '';
             return { success: false, error };
         }
     }
@@ -816,7 +816,7 @@ export class API{
             // Procesar cada mascota para obtener la URL de la imagen
             const mascotasConImagenes = await Promise.all(mascotas.map(async (mascota) => {
                 if (!mascota.imagen) {
-                    return { ...mascota, imagenUrl: '/Frontend/imagenes/default-pet.png' };
+                    return { ...mascota, imagenUrl: 'imagenes/default-pet.png' };
                 }
                 
                 try {
@@ -832,11 +832,11 @@ export class API{
                         
                     return { 
                         ...mascota, 
-                        imagenUrl: signedUrl || '/Frontend/imagenes/default-pet.png' 
+                        imagenUrl: signedUrl || 'imagenes/default-pet.png' 
                     };
                 } catch (error) {
                     console.error(`Error al obtener la imagen de la mascota ${mascota.id_mascota}:`, error);
-                    return { ...mascota, imagenUrl: '/Frontend/imagenes/default-pet.png' };
+                    return { ...mascota, imagenUrl: 'imagenes/default-pet.png' };
                 }
             }));
             

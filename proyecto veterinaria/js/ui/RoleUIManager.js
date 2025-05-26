@@ -638,8 +638,8 @@ class RoleUIManager {
             userCard.innerHTML = `
                 ${checkbox}
                 <div class="client-avatar">
-                    <img src="${user.imagen || '/Frontend/imagenes/img_perfil.png'}" alt="Avatar" 
-                         onerror="this.src='/Frontend/imagenes/img_perfil.png'">
+                    <img src="${user.imagen || 'imagenes/img_perfil.png'}" alt="Avatar" 
+                         onerror="this.src='imagenes/img_perfil.png'">
                 </div>
                 <div class="client-info">
                     <h4>${user.nombre || 'Sin nombre'} ${user.apellidos || ''}</h4>
@@ -1418,7 +1418,7 @@ class RoleUIManager {
                 const petCardHTML = `
                     <div class="pet-card" data-pet-id="${pet.id}">
                         <div style="position: relative;">
-                            <img src="${pet.photoUrl}" alt="Foto de ${pet.name}" onerror="this.src='/Frontend/imagenes/default-pet.png'">
+                            <img src="${pet.photoUrl}" alt="Foto de ${pet.name}" onerror="this.src='imagenes/default-pet.png'">
                             <span class="pet-age">${pet.age} ${pet.ageUnit}</span>
                         </div>
                         <div class="pet-info">
@@ -1604,7 +1604,7 @@ class RoleUIManager {
             const notes = pet.notas_especiales || 'Sin notas especiales';
             const allergies = pet.alergia || 'No se han registrado alergias';
             const medicalHistory = pet.historial_medico || 'No hay historial médico registrado';
-            const petImage = pet.imagen || '/Frontend/imagenes/default-pet.png';
+            const petImage = pet.imagen || 'imagenes/default-pet.png';
         
             // Obtener el nombre del cliente (dueño de la mascota)
             const clientName = localStorage.getItem('currentClientName') || 'Cliente';
@@ -1661,7 +1661,7 @@ class RoleUIManager {
                 petImageElement.src = petImage;
                 petImageElement.alt = `Foto de ${petName}`;
                 petImageElement.onerror = function() {
-                    this.src = '/Frontend/imagenes/default-pet.png';
+                    this.src = 'imagenes/default-pet.png';
                     this.alt = 'Imagen no disponible';
                 };
             }

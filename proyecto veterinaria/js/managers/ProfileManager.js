@@ -74,7 +74,7 @@ class ProfileManager {
 
             // Formatear los datos para que coincidan con el formato esperado
             return {
-                photo: profileData?.imagen || "/Frontend/imagenes/img_perfil.png",
+                photo: profileData?.imagen || "imagenes/img_perfil.png",
                 name: `${profileData?.nombre || ''} ${profileData?.apellidos || ''}`.trim() || 'Usuario',
                 stats: {
                     pets: totalMascotas,
@@ -107,7 +107,7 @@ class ProfileManager {
      */
     static getDefaultProfile() {
         return {
-            photo: "/Frontend/imagenes/img_perfil.png",
+            photo: "imagenes/img_perfil.png",
             name: "Usuario",
             stats: { 
                 pets: 0, 

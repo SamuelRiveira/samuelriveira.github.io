@@ -48,7 +48,7 @@ class AppointmentManager {
             const citasProcesadas = await Promise.all(citasFiltradas.map(async (cita) => {
                 // Obtener datos de la mascota
                 let nombreMascota = cita.mascota?.nombre || 'Mascota sin nombre';
-                let imagenMascota = "/Frontend/imagenes/default-pet.png";
+                let imagenMascota = "imagenes/default-pet.png";
                 
                 if (cita.mascota?.id_mascota) {
                     const { success: mascotaSuccess, data: mascotaData } = await API.obtenerMascotaPorId(cita.mascota.id_mascota);

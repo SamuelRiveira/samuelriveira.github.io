@@ -67,7 +67,7 @@ class PetManager {
                 age: mascota.edad?.toString() || '0',
                 ageUnit: 'años',
                 appointment: mascota.proxima_cita || 'No programada',
-                photoUrl: mascota.imagen || '/Frontend/imagenes/default-pet.png',
+                photoUrl: mascota.imagen || 'imagenes/default-pet.png',
                 weight: mascota.peso ? `${mascota.peso}` : 'No especificado',
                 owner: nombrePropietario,
                 medicalHistory: mascota.historial_medico || [],

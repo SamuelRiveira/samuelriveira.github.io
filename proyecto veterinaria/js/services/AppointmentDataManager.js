@@ -49,7 +49,7 @@ class AppointmentDataManager {
                     id_servicio: cita.id_servicio,
                     // Incluir más datos necesarios para las tarjetas
                     petName: cita.mascota?.nombre || 'Mascota',
-                    petImage: cita.mascota?.imagen || '/Frontend/imagenes/default-pet.png',
+                    petImage: cita.mascota?.imagen || 'imagenes/default-pet.png',
                     serviceName: cita.servicio?.nombre || 'Servicio'
                 };
             });
@@ -98,7 +98,7 @@ class AppointmentDataManager {
                     name: 'Luna',
                     type: 'Perro',
                     breed: 'Labrador',
-                    imageUrl: '/Frontend/imagenes/img_luna.jpg'
+                    imageUrl: 'imagenes/img_luna.jpg'
                 },
                 owner: {
                     id: 1,
@@ -126,7 +126,7 @@ class AppointmentDataManager {
                     name: 'Mia',
                     type: 'Gato',
                     breed: 'Siamés',
-                    imageUrl: '/Frontend/imagenes/img_mia.jpg'
+                    imageUrl: 'imagenes/img_mia.jpg'
                 },
                 owner: {
                     id: 1,
@@ -154,7 +154,7 @@ class AppointmentDataManager {
                     name: 'Max',
                     type: 'Perro',
                     breed: 'Bulldog',
-                    imageUrl: '/Frontend/imagenes/img_max.jpg'
+                    imageUrl: 'imagenes/img_max.jpg'
                 },
                 owner: {
                     id: 2,
@@ -182,7 +182,7 @@ class AppointmentDataManager {
                     name: 'Rocky',
                     type: 'Perro',
                     breed: 'Pastor Alemán',
-                    imageUrl: '/Frontend/imagenes/img_rocky.jpg'
+                    imageUrl: 'imagenes/img_rocky.jpg'
                 },
                 owner: {
                     id: 3,
@@ -210,7 +210,7 @@ class AppointmentDataManager {
                     name: 'Simba',
                     type: 'Gato',
                     breed: 'Persa',
-                    imageUrl: '/Frontend/imagenes/img_simba.jpg'
+                    imageUrl: 'imagenes/img_simba.jpg'
                 },
                 owner: {
                     id: 3,

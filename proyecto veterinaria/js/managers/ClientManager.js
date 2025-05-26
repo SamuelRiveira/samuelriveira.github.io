@@ -70,7 +70,7 @@ class ClientManager {
                             age: "3",
                             ageUnit: "años",
                             appointment: "10/06/2025",
-                            photoUrl: "/Frontend/imagenes/img_luna.jpg",
+                            photoUrl: "imagenes/img_luna.jpg",
                             weight: "4.5 kg",
                             medicalHistory: [
                                 "Vacunación completa (01/01/2024)",
@@ -88,7 +88,7 @@ class ClientManager {
                             age: "5",
                             ageUnit: "años",
                             appointment: "22/06/2025",
-                            photoUrl: "/Frontend/imagenes/img_simba.jpg",
+                            photoUrl: "imagenes/img_simba.jpg",
                             weight: "28.5 kg",
                             medicalHistory: [
                                 "Vacunación completa (12/01/2024)",
@@ -106,7 +106,7 @@ class ClientManager {
                             age: "2",
                             ageUnit: "años",
                             appointment: "No programada",
-                            photoUrl: "/Frontend/imagenes/img_rocky.jpg",
+                            photoUrl: "imagenes/img_rocky.jpg",
                             weight: "12.3 kg",
                             medicalHistory: [
                                 "Revisión respiratoria (05/02/2025)",
@@ -124,7 +124,7 @@ class ClientManager {
                             age: "8",
                             ageUnit: "meses",
                             appointment: "02/08/2025",
-                            photoUrl: "/Frontend/imagenes/img_mia.jpg",
+                            photoUrl: "imagenes/img_mia.jpg",
                             weight: "3.1 kg",
                             medicalHistory: [
                                 "Primera vacunación (03/03/2025)",
@@ -142,7 +142,7 @@ class ClientManager {
                             age: "6",
                             ageUnit: "años",
                             appointment: "27/09/2025",
-                            photoUrl: "/Frontend/imagenes/img_max.jpg",
+                            photoUrl: "imagenes/img_max.jpg",
                             weight: "18.9 kg",
                             medicalHistory: [
                                 "Control de peso (01/01/2025)",
@@ -171,7 +171,7 @@ class ClientManager {
                             age: "4",
                             ageUnit: "años",
                             appointment: "15/07/2025",
-                            photoUrl: "/Frontend/imagenes/img_coco.jpg",
+                            photoUrl: "imagenes/img_coco.jpg",
                             weight: "2.8 kg",
                             medicalHistory: [
                                 "Limpieza dental (15/02/2025)",
@@ -188,7 +188,7 @@ class ClientManager {
                             age: "2",
                             ageUnit: "años",
                             appointment: "20/08/2025",
-                            photoUrl: "/Frontend/imagenes/img_nala.jpg",
+                            photoUrl: "imagenes/img_nala.jpg",
                             weight: "3.9 kg",
                             medicalHistory: [
                                 "Esterilización (10/01/2025)",
@@ -216,7 +216,7 @@ class ClientManager {
                             age: "3",
                             ageUnit: "años",
                             appointment: "05/07/2025",
-                            photoUrl: "/Frontend/imagenes/img_thor.jpg",
+                            photoUrl: "imagenes/img_thor.jpg",
                             weight: "32.5 kg",
                             medicalHistory: [
                                 "Revisión articular (20/02/2025)",
@@ -269,7 +269,7 @@ class ClientManager {
                     age: "3",
                     ageUnit: "años",
                     appointment: "10/06/2025",
-                    photoUrl: "/Frontend/imagenes/img_luna.jpg",
+                    photoUrl: "imagenes/img_luna.jpg",
                     weight: "4.5 kg",
                     owner: {
                         id: 1,
@@ -291,7 +291,7 @@ class ClientManager {
                     age: "5",
                     ageUnit: "años",
                     appointment: "22/06/2025",
-                    photoUrl: "/Frontend/imagenes/img_simba.jpg",
+                    photoUrl: "imagenes/img_simba.jpg",
                     weight: "28.5 kg",
                     owner: {
                         id: 1,
@@ -448,7 +448,7 @@ class ClientManager {
                     age: "3",
                     ageUnit: "años",
                     appointment: "10/06/2025",
-                    photoUrl: "/Frontend/imagenes/img_luna.jpg",
+                    photoUrl: "imagenes/img_luna.jpg",
                     weight: "4.5 kg",
                     owner: {
                         id: 1,
@@ -463,7 +463,7 @@ class ClientManager {
                     age: "5",
                     ageUnit: "años",
                     appointment: "22/06/2025",
-                    photoUrl: "/Frontend/imagenes/img_simba.jpg",
+                    photoUrl: "imagenes/img_simba.jpg",
                     weight: "28.5 kg",
                     owner: {
                         id: 1,
@@ -478,7 +478,7 @@ class ClientManager {
                     age: "2",
                     ageUnit: "años",
                     appointment: "No programada",
-                    photoUrl: "/Frontend/imagenes/img_rocky.jpg",
+                    photoUrl: "imagenes/img_rocky.jpg",
                     weight: "12.3 kg",
                     owner: {
                         id: 1,
@@ -493,7 +493,7 @@ class ClientManager {
                     age: "8",
                     ageUnit: "meses",
                     appointment: "02/08/2025",
-                    photoUrl: "/Frontend/imagenes/img_mia.jpg",
+                    photoUrl: "imagenes/img_mia.jpg",
                     weight: "3.1 kg",
                     owner: {
                         id: 1,
@@ -508,7 +508,7 @@ class ClientManager {
                     age: "6",
                     ageUnit: "años",
                     appointment: "27/09/2025",
-                    photoUrl: "/Frontend/imagenes/img_max.jpg",
+                    photoUrl: "imagenes/img_max.jpg",
                     weight: "18.9 kg",
                     owner: {
                         id: 1,
@@ -523,7 +523,7 @@ class ClientManager {
                     age: "4",
                     ageUnit: "años",
                     appointment: "15/07/2025",
-                    photoUrl: "/Frontend/imagenes/img_coco.jpg",
+                    photoUrl: "imagenes/img_coco.jpg",
                     weight: "2.8 kg",
                     owner: {
                         id: 2,
@@ -538,7 +538,7 @@ class ClientManager {
                     age: "2",
                     ageUnit: "años",
                     appointment: "20/08/2025",
-                    photoUrl: "/Frontend/imagenes/img_nala.jpg",
+                    photoUrl: "imagenes/img_nala.jpg",
                     weight: "3.9 kg",
                     owner: {
                         id: 2,
@@ -553,7 +553,7 @@ class ClientManager {
                     age: "3",
                     ageUnit: "años",
                     appointment: "05/07/2025",
-                    photoUrl: "/Frontend/imagenes/img_thor.jpg",
+                    photoUrl: "imagenes/img_thor.jpg",
                     weight: "32.5 kg",
                     owner: {
                         id: 3,
