@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CuidaPet - Presentación</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        .presentation-container {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .slide {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+            width: 90vw;
+            max-width: 1200px;
+            height: 85vh;
+            max-height: 700px;
+            padding: 60px;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow-y: auto;
+            animation: slideIn 0.6s ease-out;
+        }
+
+        .slide.active {
+            display: flex;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .slide h1 {
+            color: #2c3e50;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .slide h2 {
+            color: #34495e;
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .slide h2::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            margin: 20px auto 0;
+            border-radius: 2px;
+        }
+
+        .slide h3 {
+            color: #2c3e50;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin: 30px 0 20px 0;
+        }
+
+        .slide p {
+            color: #34495e;
+            font-size: 1.3rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-card h4 {
+            color: #2c3e50;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            color: #495057;
+            font-size: 1.1rem;
+            margin: 10px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .feature-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin: 40px 0;
+        }
+
+        .tech-item {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .tech-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .metrics-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .metric-card {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(40, 167, 69, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .metric-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .metric-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .metric-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .navigation {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 15px;
+            z-index: 1000;
+        }
+
+        .nav-btn {
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #2c3e50;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-btn:hover {
+            background: white;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .nav-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .slide-counter {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            background: rgba(102, 126, 234, 0.1);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #667eea;
+        }
+
+        .intro-slide {
+            text-align: center;
+        }
+
+        .intro-slide .subtitle {
+            font-size: 1.5rem;
+            color: #6c757d;
+            margin-bottom: 40px;
+        }
+
+        .intro-slide .description {
+            font-size: 1.4rem;
+            color: #495057;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .achievements {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .achievement {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 10px 25px rgba(40, 167, 69, 0.2);
+        }
+
+        .achievement-icon {
+            font-size: 2rem;
+        }
+
+        .github-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 20px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 40px auto;
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .github-link:hover {
+            transform: translateY(-5px);
+        }
+
+        .slide.active {
+            overflow: hidden;
+        }
+
+        @media (max-width: 768px) {
+            .slide {
+                padding: 30px;
+                width: 95vw;
+                height: 90vh;
+            }
+            
+            .slide h1 {
+                font-size: 2.5rem;
+            }
+            
+            .slide h2 {
+                font-size: 2rem;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .tech-stack {
+                gap: 10px;
+            }
+            
+            .tech-item {
+                padding: 10px 20px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation-container">
+        <div class="slide-counter">
+            <span id="currentSlide">1</span> / <span id="totalSlides">8</span>
+        </div>
+
+        <!-- Slide 1: Portada -->
+        <div class="slide active intro-slide">
+            <h1>🐾 CuidaPet</h1>
+            <p class="subtitle">Plataforma Integral de Gestión Veterinaria</p>
+            <p class="description">CuidaPet es una plataforma integral de gestión veterinaria que permite a los propietarios de mascotas gestionar sus perfiles, información de sus animales y programar citas, mientras que los veterinarios pueden administrar usuarios, citas y toda la información relacionada con las mascotas.</p>
+        </div>
+
+        <!-- Slide 2: ¿Qué es CuidaPet? -->
+        <div class="slide">
+            <h2>🎯 ¿Qué tiene CuidaPet?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h4>👤 Perfiles de Mascotas</h4>
+                    <p>Gestión completa de información de cada mascota</p>
+                </div>
+                <div class="feature-card">
+                    <h4>📋 Historial Médico</h4>
+                    <p>Registro detallado y accesible de toda la información médica</p>
+                </div>
+                <div class="feature-card">
+                    <h4>📅 Programación de Citas</h4>
+                    <p>Sistema intuitivo para agendar y gestionar citas veterinarias</p>
+                </div>
+                <div class="feature-card">
+                    <h4>⚕️ Administración Veterinaria</h4>
+                    <p>Herramientas completas para profesionales veterinarios</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Tecnologías -->
+        <div class="slide">
+            <h2>🛠️ Tecnologías usadas</h2>
+            <div class="tech-stack">
+                <div class="tech-item">HTML</div>
+                <div class="tech-item">CSS</div>
+                <div class="tech-item">JavaScript</div>
+                <div class="tech-item">Supabase</div>
+                <div class="tech-item">ChatGPT</div>
+                <div class="tech-item">Claude Sonnet</div>
+                <div class="tech-item">GitHub Pages</div>
+            </div>
+            <p style="margin-top: 40px;">Combinación perfecta de tecnologías web tradicionales con servicios modernos de backend y herramientas de inteligencia artificial</p>
+        </div>
+
+        <!-- Slide 4: Funcionalidades -->
+        <div class="slide">
+            <h2>👥 Funcionalidades Principales</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h4>🏠 Para Clientes</h4>
+                    <ul class="feature-list">
+                        <li>Gestión de perfil personal</li>
+                        <li>Registro y seguimiento de mascotas</li>
+                        <li>Programación de citas veterinarias</li>
+                        <li>Acceso al historial médico</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h4>⚕️ Para Veterinarios</h4>
+                    <ul class="feature-list">
+                        <li>Administración de usuarios</li>
+                        <li>Administración de mascotas</li>
+                        <li>Gestión completa de citas</li>
+                        <li>Actualización de historiales médicos</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Despliegue -->
+        <div class="slide">
+            <h2>🚀 Estrategia de Despliegue</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h4>✅ Recomendado</h4>
+                    <p>Vercel o Netlify para máximo rendimiento</p>
+                </div>
+                <div class="feature-card">
+                    <h4>📍 Actual</h4>
+                    <p>GitHub Pages - Funcional y accesible</p>
+                </div>
+                <div class="feature-card">
+                    <h4>⚙️ Configuración</h4>
+                    <p>Variables de entorno para Supabase, políticas y funciones</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🔧 Consideraciones</h4>
+                    <p>CORS y sistema de versionado optimizado</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Viabilidad Económica -->
+        <div class="slide">
+            <h2>📈 Análisis Económico</h2>
+            <div class="metrics-container">
+                <div class="metric-card">
+                    <div class="metric-value">€1.420</div>
+                    <div class="metric-label">Inversión Inicial</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">~€500</div>
+                    <div class="metric-label">Costes Mensuales</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">€19.620</div>
+                    <div class="metric-label">Ingresos Proyectados (1er año)</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">€13.620</div>
+                    <div class="metric-label">Beneficio Estimado</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Resultados y Mejoras -->
+        <div class="slide">
+            <h2>🎯 Resultados Alcanzados</h2>
+            <div class="achievements">
+                <div class="achievement">
+                    <div class="achievement-icon">✅</div>
+                    <div>Aplicación web funcional y desplegada</div>
+                </div>
+                <div class="achievement">
+                    <div class="achievement-icon">✅</div>
+                    <div>Sistema completo de gestión veterinaria</div>
+                </div>
+                <div class="achievement">
+                    <div class="achievement-icon">✅</div>
+                    <div>Integración exitosa con Supabase</div>
+                </div>
+                <div class="achievement">
+                    <div class="achievement-icon">✅</div>
+                    <div>Uso efectivo de herramientas IA</div>
+                </div>
+                <div class="achievement">
+                    <div class="achievement-icon">✅</div>
+                    <div>Análisis económico detallado</div>
+                </div>
+            </div>
+            
+            <h3>⚡ Mejoras Propuestas</h3>
+            <p>UX/UI mejorada con calendario visual • Modularización de JavaScript • Mayor responsividad móvil • Optimización de performance</p>
+        </div>
+
+        <!-- Slide 8: Conclusiones -->
+        <div class="slide">
+            <h2>🤝 Conclusiones</h2>
+            <p style="font-size: 1.5rem; margin-bottom: 40px;">CuidaPet demuestra la <strong>efectividad</strong> de combinar tecnologías web tradicionales con servicios modernos</p>
+            
+            <div class="feature-card" style="max-width: 800px; margin: 0 auto 40px;">
+                <h4>🏆 Logros Destacados</h4>
+                <p>Establecimiento de una <strong>base sólida</strong> para futuras mejoras y escalabilidad en el sector veterinario, con un enfoque en la experiencia del usuario y la eficiencia operativa.</p>
+            </div>
+
+            <a href="https://github.com/SamuelRiveira/CuidaPet" class="github-link" target="_blank">
+                🔗 Ver Proyecto en GitHub
+            </a>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)">← Anterior</button>
+        <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">Siguiente →</button>
+    </div>
+
+    <script>
+        let currentSlideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        document.getElementById('totalSlides').textContent = totalSlides;
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[index].classList.add('active');
+            
+            document.getElementById('currentSlide').textContent = index + 1;
+            
+            // Update navigation buttons
+            document.getElementById('prevBtn').disabled = index === 0;
+            document.getElementById('nextBtn').disabled = index === totalSlides - 1;
+        }
+
+        function changeSlide(direction) {
+            const newIndex = currentSlideIndex + direction;
+            
+            if (newIndex >= 0 && newIndex < totalSlides) {
+                currentSlideIndex = newIndex;
+                showSlide(currentSlideIndex);
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft') {
+                changeSlide(-1);
+            } else if (e.key === 'ArrowRight') {
+                changeSlide(1);
+            } else if (e.key === ' ') {
+                e.preventDefault();
+                changeSlide(1);
+            }
+        });
+
+        // Initialize
+        showSlide(0);
+
+        // Touch/swipe support for mobile
+        let startX = 0;
+        let endX = 0;
+
+        document.addEventListener('touchstart', function(e) {
+            startX = e.touches[0].clientX;
+        });
+
+        document.addEventListener('touchend', function(e) {
+            endX = e.changedTouches[0].clientX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = startX - endX;
+
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    changeSlide(1); // Swipe left - next slide
+                } else {
+                    changeSlide(-1); // Swipe right - previous slide
+                }
+            }
+        }
+    </script>
+</body>
+</html>
