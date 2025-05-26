@@ -1,0 +1,102 @@
+/* 
+* Estilos para los estados de citas en CuidaPet
+* Define colores y estilos para los diferentes estados de citas
+*/
+
+/* Estilos para las etiquetas de estado */
+.status-badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Estado: Pendiente */
+.status-pending .status-badge {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+}
+
+/* Estado: Completada */
+.status-completed .status-badge {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+/* Estado: Cancelada */
+.status-cancelled .status-badge {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Colores para los encabezados de tarjetas según estado */
+.status-pending .appointment-header {
+    background-color: #ffc107; /* Amarillo para citas pendientes */
+}
+
+.status-completed .appointment-header {
+    background-color: #4caf50; /* Verde para citas completadas */
+}
+
+.status-cancelled .appointment-header {
+    background-color: #9e9e9e; /* Gris para citas canceladas */
+}
+
+/* Contenedor de estado */
+.appointment-status {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    padding: 5px 0;
+}
+
+/* Animación para cambio de estado */
+.appointment-header,
+.status-badge {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Estilos para el botón de edición de estado */
+.btn-edit {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+}
+
+.btn-edit:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.btn-edit svg {
+    width: 16px;
+    height: 16px;
+    color: #666;
+}
+
+/* Los botones de edición se controlan desde JavaScript */
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .appointment-status {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .status-badge {
+        width: 100%;
+    }
+}

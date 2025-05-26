@@ -1,0 +1,178 @@
+/* Estilos base para todos los modales */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: var(--white);
+    margin: 5% auto;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    width: 90%;
+    max-width: 500px;
+    animation: modalFadeIn 0.3s;
+    position: relative;
+}
+
+.modal h2 {
+    margin-top: 0;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.close-btn {
+    position: absolute;
+    right: 1.5rem;
+    top: 1rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--dark-gray);
+    cursor: pointer;
+    line-height: 1;
+}
+
+.close-btn:hover {
+    color: var(--primary-color);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--dark-gray);
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--light-gray);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(86, 128, 176, 0.2);
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+/* Estilos específicos para el modal de mascotas */
+.pet-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.pet-modal-content {
+    background-color: var(--white);
+    margin: 5% auto;
+    padding: 0;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    width: 80%;
+    max-width: 600px;
+    animation: modalFadeIn 0.3s;
+    overflow: hidden;
+}
+
+@keyframes modalFadeIn {
+    from {opacity: 0; transform: translateY(-20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+.pet-modal-header {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+}
+
+.pet-modal-header h2 {
+    margin: 0;
+    color: var(--white);
+}
+
+.close-modal {
+    color: var(--white);
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-modal:hover {
+    color: var(--medium-gray);
+}
+
+.pet-modal-body {
+    padding: 1.5rem;
+}
+
+.age-input {
+    display: flex;
+    gap: 10px;
+}
+
+.age-input input {
+    flex: 2;
+}
+
+.age-input select {
+    flex: 1;
+}
+
+#confirm-cancel-btn{
+    background-color: #e74c3c;
+    border-color: #e74c3c;
+    color: white;
+    transition: ease .2s;
+}
+
+#confirm-cancel-btn:hover{
+    background-color: #c0392b;
+    border-color: #c0392b;
+    color: var(--white);
+}
+
+#cancel-modal-btn{
+    background-color: var(--primary-color);
+    color: var(--white);
+    transition: ease .2s;
+}
+
+#cancel-modal-btn:hover{
+    --tw-bg-opacity: 1;
+    background-color: rgb(61 82 106 / var(--tw-bg-opacity));
+}

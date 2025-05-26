@@ -1,0 +1,408 @@
+/* Pet Cards */
+
+.medical-divider {
+    border: 0;
+}
+
+.container-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.container-right{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    padding: 12px;
+    background-color: #ebf2f480;
+    height: 68px;
+    text-align: center;
+}
+
+.container-right p{
+    font-size: 14px;
+    color: #737373;
+    font-weight: 500;
+    margin: 0;
+}
+
+.container-right h2{
+    font-size: 16px;
+    color: #0a0a0a;
+    font-weight: 500;
+    margin: 0;
+}
+
+.pets-grid, .pets-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.pet-card {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.pet-card:hover {
+    transform: translateY(-5px);
+}
+
+.pet-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.pet-info {
+    padding: 1rem;
+}
+
+.pet-type {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 0.2rem 0.5rem;
+    border-radius: var(--border-radius);
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.pet-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.pet-breed {
+    color: var(--gray);
+    margin-bottom: 0.5rem;
+}
+
+.pet-age {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(44, 62, 80, 0.8);
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: var(--border-radius);
+}
+
+.pet-appointment {
+    margin-top: 1rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid #eee;
+    font-size: 0.85rem;
+    color: var(--gray);
+}
+
+/* Back Button */
+.back-button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.back-button span{
+    font-size: 20px;
+}
+
+/* Pet Detail Page */
+.pet-profile {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.pet-photo{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 380px;
+    height: 280px;
+}
+
+.pet-photo img {
+    width: 100%;
+    height: 100%;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    object-fit: cover;
+}
+
+.pet-info-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.next-appointment, .medical-history, .allergies, .basic-info, .special-notes {
+    background-color: var(--white);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.pet-tag {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 0.3rem 0.6rem;
+    border-radius: var(--border-radius);
+    font-size: 0.8rem;
+    margin-right: 0.5rem;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.info-grid > :nth-child(2n-1) {
+    justify-self: start;
+}
+
+.info-grid > :nth-child(2n) {
+    justify-self: end;
+}
+
+.info-item {
+    margin-bottom: 0.5rem;
+}
+
+.info-label {
+    font-weight: bold;
+    color: var(--gray);
+}
+
+.info-value {
+    font-weight: 500;
+}
+
+.allergy-tag {
+    display: inline-block;
+    background-color: #e74c3c;
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: var(--border-radius);
+    font-size: 0.8rem;
+    margin-right: 0.5rem;
+}
+
+/* Estilos para el checkbox de selección */
+.pet-checkbox {
+    display: none;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 22px;
+    height: 22px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 2px solid var(--secondary-color);
+    border-radius: 4px;
+    z-index: 10;
+}
+
+.pet-checkbox.checked {
+    background-color: var(--secondary-color);
+}
+
+.pet-checkbox.checked::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: bold;
+}
+
+.delete-mode .pet-checkbox {
+    display: block;
+}
+
+/* Estilos para las tarjetas seleccionadas */
+.pet-card.selected {
+    border: 2px solid #e74c3c;
+    box-shadow: 0 4px 8px rgba(231, 76, 60, 0.3);
+}
+
+/* Estilos para botones de borrado */
+.btn-danger {
+    background-color: #e74c3c;
+    border-color: #e74c3c;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #c0392b;
+    border-color: #c0392b;
+}
+
+.medical-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.medical-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #dfdfdf;
+}
+
+.medical-list li:last-child {
+    border-bottom: none;
+}
+
+.special-notes p {
+    line-height: 1.6;
+    color: #555;
+}
+
+.date {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* Estilos para el mensaje cuando no hay mascotas */
+.no-pets-message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 3rem;
+    background-color: #f8f9fa;
+    border-radius: 1rem;
+    margin: 2rem auto;
+    min-height: 250px;
+    width: 30%;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.no-pets-message svg {
+    color: #adb5bd;
+    margin-bottom: 1.5rem;
+}
+
+.no-pets-message h3 {
+    color: #495057;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.no-pets-message p {
+    color: #6c757d;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+/* Estilos para el botón de añadir mascota */
+.container-top {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.pet-action-buttons{
+    gap: 8px;
+}
+
+#delete-confirm-container{
+    gap: 8px;
+}
+
+#cancel-delete-btn{
+    background-color: var(--primary-color);
+}
+
+#delete-pet-btn:hover{
+    background-color: #c0392b;
+    border-color: #c0392b;
+}
+
+/* Estilos para el modal */
+.pet-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.pet-modal-content {
+    background-color: var(--white);
+    margin: 5% auto;
+    padding: 0;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    width: 80%;
+    max-width: 600px;
+    animation: modalFadeIn 0.3s;
+}
+
+@keyframes modalFadeIn {
+    from {opacity: 0; transform: translateY(-20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+.pet-modal-header {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+}
+
+.pet-modal-header h2 {
+    margin: 0;
+    color: var(--white);
+}
+
+.close-modal {
+    color: var(--white);
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-modal:hover {
+    color: var(--medium-gray);
+}
+
+.pet-modal-body {
+    padding: 1.5rem;
+}
+
+.age-input {
+    display: flex;
+    gap: 10px;
+}
+
+.age-input input {
+    flex: 2;
+}
+
+.age-input select {
+    flex: 1;
+}

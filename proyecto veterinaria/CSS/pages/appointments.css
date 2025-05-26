@@ -1,0 +1,298 @@
+/* 
+* Estilos para citas en CuidaPet
+* Incluye los estilos para el calendario de citas y tarjetas de citas
+*/
+
+/* Contenedor principal de citas */
+.appointments-calendar {
+    padding: 1.5rem;
+    overflow: hidden;
+}
+
+/* Grid de citas */
+.appointments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+/* Tarjeta de cita */
+.appointment-card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.appointment-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Cabecera de la tarjeta de cita */
+.appointment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.8rem 1rem;
+    transition: background-color 0.3s ease;
+}
+
+/* Colores de cabecera según estado */
+.status-pending .appointment-header {
+    background-color: #ffc107; /* Amarillo para citas pendientes */
+}
+
+.status-completed .appointment-header {
+    background-color: #4caf50; /* Verde para citas completadas */
+}
+
+.status-cancelled .appointment-header {
+    background-color: #9e9e9e; /* Gris para citas canceladas */
+}
+
+/* Fecha de la cita */
+.appointment-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.day {
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.month {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+/* Hora de la cita */
+.appointment-time {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.time-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.time {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* Contenido de la tarjeta */
+.appointment-content {
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Información breve de la mascota */
+.pet-info-brief {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.pet-thumbnail {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.pet-details h4 {
+    margin: 0 0 0.3rem 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-color-dark);
+}
+
+.pet-details p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-color-light);
+}
+
+/* Sección de servicio */
+.appointment-service {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.service-icon, .owner-icon, .vet-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    color: var(--text-color-light);
+}
+
+.service-name {
+    flex: 1;
+    font-size: 0.95rem;
+    color: var(--text-color);
+}
+
+.service-price {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* Sección de propietario */
+.appointment-owner, .appointment-vet {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.owner-name, .vet-name {
+    flex: 1;
+    font-size: 0.95rem;
+    color: var(--text-color);
+}
+
+.phone-icon {
+    color: var(--text-color-light);
+    transition: color 0.2s ease;
+}
+
+.phone-icon:hover {
+    color: var(--primary-color);
+}
+
+/* Sección de estado */
+.appointment-status {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.status-badge {
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    background-color: #e6e6e6;
+    color: var(--text-color);
+}
+
+/* Colores para estados */
+.status-pending .status-badge {
+    background-color: #ffefd5;
+    color: #ff9800;
+}
+
+.status-completed .status-badge {
+    background-color: #e5f5e0;
+    color: #4caf50;
+}
+
+.status-cancelled .status-badge {
+    background-color: #ffebee;
+    color: #f44336;
+}
+
+/* Acciones de cita */
+.appointment-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn-action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    cursor: pointer;
+    color: var(--text-color-light);
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-edit:hover {
+    background-color: #e3f2fd;
+    color: #2196f3;
+}
+
+/* Estilos para filtros */
+.filter-container {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.filter-select, .date-filter {
+    padding: 0.5rem 1rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    background-color: white;
+}
+
+/* Estilos para filtro de fecha */
+.date-filter {
+    min-width: 140px;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .appointments-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .filter-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .filter-select, .date-filter {
+        width: 100%;
+    }
+}
+
+/* Estado de carga */
+.appointments-calendar p {
+    text-align: center;
+    color: var(--text-color-light);
+}
+
+/* Estilos para estados de citas en la tarjeta */
+.appointment-card.status-pending .appointment-header {
+    background-color: #ff9800;
+}
+
+.appointment-card.status-completed .appointment-header {
+    background-color: #4caf50;
+}
+
+.appointment-card.status-cancelled .appointment-header {
+    background-color: #9e9e9e;
+}

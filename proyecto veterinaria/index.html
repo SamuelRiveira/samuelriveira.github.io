@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CuidaPet - Gestión de Mascotas</title>
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="CSS/core/base.css">
+    <link rel="stylesheet" href="CSS/core/responsive.css">
+    <link rel="stylesheet" href="CSS/core/utils.css">
+    
+    <!-- Components CSS -->
+    <link rel="stylesheet" href="CSS/components/forms.css">
+    <link rel="stylesheet" href="CSS/components/header.css">
+    <link rel="stylesheet" href="CSS/components/modals.css">
+    <link rel="stylesheet" href="CSS/components/appointment-status.css">
+    
+    <!-- Pages CSS -->
+    <link rel="stylesheet" href="CSS/pages/appointment.css">
+    <link rel="stylesheet" href="CSS/pages/appointments.css">
+    <link rel="stylesheet" href="CSS/pages/auth.css">
+    <link rel="stylesheet" href="CSS/pages/home.css">
+    <link rel="stylesheet" href="CSS/pages/pets.css">
+    <link rel="stylesheet" href="CSS/pages/profile.css">
+    <link rel="stylesheet" href="CSS/pages/roles.css">
+    <link rel="shortcut icon" href="imagenes/CuidaPet_azul_v2_icon.png" type="image/x-icon">
+</head>
+<body>
+
+    <!-- Popup Login and Register -->
+
+    <div class="contenedor">
+        <span id="cierre" class="icono-cierre" onclick="cerrar()"><img class="iconCierre" src="iconos/close-outline.svg" alt="cierre"></span>
+        <div class="forma-caja login">
+            <h2>Iniciar sesión</h2>
+            <form id="login-form" action="#">
+                <div class="caja-input">
+                    <span class="icono"><img class="iconPerson" src="iconos/person.svg" alt="email"></span>
+                    <input type="email" id="login-email" required autocomplete="email">
+                    <label>Email</label>
+                </div>
+                <div class="caja-input">
+                    <span class="icono"><img class="lockClosed" src="iconos/lock-closed.svg" alt="lock-closed"></ion-icon></span>
+                    <input type="password" id="login-password" required autocomplete="current-password">
+                    <label>Contraseña</label>
+                </div>
+                <div id="login-mensaje" class="mensaje-error" style="display: none; color: red; margin-bottom: 10px;"></div>
+                <button type="submit" id="boton-login" class="boton-login">Iniciar sesión</button>
+                <div class="login-register">
+                    <p>No tienes una cuenta? <a href="#" onclick="activar()">Registrarse</a></p>
+                </div>
+            </form>
+        </div>
+
+        <!-- Registro -->
+
+        <div class="forma-caja register">
+            <h2>Registrarse</h2>
+            <form id="registro-form" action="#">
+                <div class="caja-input">
+                    <span class="icono"><img class="iconPerson" src="iconos/person.svg" alt="email"></span>
+                    <input type="email" id="registro-email" required autocomplete="email">
+                    <label>Email</label>
+                </div>
+                <div class="caja-input">
+                    <span class="icono"><img class="lockClosed" src="iconos/lock-closed.svg" alt="lock-closed"></span>
+                    <input type="password" id="registro-password" required autocomplete="new-password">
+                    <label>Contraseña</label>
+                </div>
+                <div id="registro-mensaje" class="mensaje-error" style="display: none; color: red; margin-bottom: 10px;"></div>
+                <div class="recordar-olvidar">
+                    <label><input type="checkbox" id="registro-terminos" required>Acepto los términos y condiciones</label>
+                </div>
+                <button type="submit" id="boton-registro" class="boton-register">Registrarse</button>
+                <div class="login-register">
+                    <p>Ya tienes una cuenta? <a href="#" onclick="desactivar()">Iniciar sesión</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Header & Navigation - SECCIÓN CORREGIDA -->
+    <header>
+        <div class="logo">
+            <img class="logo-icon" src="/Frontend/imagenes/CuidaPet_azul_v2_icon.png" alt="CuidaPet Logo">
+        </div>
+        
+        <!-- Botón para menú móvil con iconos corregidos -->
+        <button class="mobile-nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+            <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+            <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        
+        <!-- Overlay para cerrar el menú -->
+        <div class="mobile-nav-overlay"></div>
+        
+        <!-- Navegación principal -->
+        <nav id="main-nav">
+            <a href="#" data-page="home" class="active">
+                <i class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transform: translateY(1.3px);">
+                        <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path>
+                        <path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    </svg>
+                </i> 
+                Inicio
+            </a>
+            <a href="#" data-page="appointments">
+                <i class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transform: translateY(1.3px);">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                </i> 
+                Citas
+            </a>
+            <a href="#" data-page="pets">
+                <i class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="20" height="20" viewBox="0 0 1024 1024" preserveAspectRatio="xMidYMid meet">
+                        <g transform="translate(0.000000,1125.000000) scale(0.100000,-0.100000)" fill="#ffffff" stroke-width="2">
+                        <path d="M2047 9184 c-195 -30 -359 -93 -507 -194 -266 -182 -449 -463 -517 -791 -16 -78 -17 -281 -21 -2984 -2 -2158 0 -2928 8 -3009 37 -342 164 -616 378 -817 173 -162 354 -251 642 -317 70 -16 289 -17 3050 -20 2077 -2 3004 0 3070 8 282 32 504 143 725 365 204 205 320 452 354 758 15 130 15 5786 1 5907 -34 288 -154 532 -365 745 -170 172 -368 278 -623 337 l-97 23 -3005 1 c-2514 2 -3019 0 -3093 -12z m6178 -373 c324 -109 569 -359 646 -658 18 -72 19 -162 19 -3013 l1 -2938 -22 -94 c-42 -179 -112 -310 -230 -427 -142 -143 -356 -246 -559 -271 -118 -14 -5815 -14 -5929 0 -100 13 -222 50 -316 97 -256 128 -412 344 -471 651 -22 115 -21 5887 1 5982 50 215 198 423 395 557 126 85 256 133 390 142 47 3 1417 4 3045 1 l2960 -5 70 -24z"/>
+                        <path d="M6055 8119 c-260 -35 -518 -256 -670 -574 -235 -491 -209 -1038 71 -1461 160 -242 406 -362 686 -333 212 86 434 339 556 632 139 339 177 676 106 963 -46 190 -184 374 -343 459 -123 66 -312 89 -440 55z m278 -335 c138 -68 197 -193 209 -435 17 -362 -108 -701 -342 -922 -147 -139 -262 -175 -379 -118 -147 72 -225 241 -226 487 0 115 28 293 61 393 81 240 285 508 448 589 95 48 144 49 229 6z"/>
+                        <path d="M3920 8104 c-256 -69 -473 -300 -588 -626 -161 -454 -42 -1066 282 -1452 79 -94 267 -219 389 -259 89 -29 254 -28 362 2 192 54 351 187 480 402 97 164 142 317 166 566 25 262 -36 558 -169 817 -70 138 -146 238 -266 354 -162 154 -298 213 -495 211 -60 0 -130 -7 -161 -15z m316 -363 c112 -53 245 -203 324 -366 114 -238 145 -550 79 -800 -62 -238 -164 -392 -306 -462 -51 -24 -69 -28 -148 -7 -178 36 -348 198 -469 447 -178 365 -169 830 18 1013 57 56 104 73 188 69 49 -3 80 -12 120 -33z"/>
+                        <path d="M2431 6785 c-94 -26 -171 -75 -257 -160 -172 -171 -246 -395 -231 -704 29 -612 357 -1154 772 -1277 83 -24 249 -24 329 0 111 33 176 73 267 165 73 74 94 103 138 192 85 174 113 339 93 550 -40 401 -203 765 -456 1014 -175 173 -286 226 -486 232 -81 2 -131 -2 -169 -12z m290 -341 c72 -39 213 -180 278 -279 70 -107 134 -242 165 -347 53 -183 70 -412 41 -537 -33 -140 -143 -289 -239 -326 -39 -15 -54 -16 -102 -7 -178 36 -348 198 -469 447 -52 155 -68 274 -62 452 4 83 13 182 21 220 41 183 134 333 261 420 120 83 227 94 351 36z"/>
+                        <path d="M7480 6784 c-117 -32 -244 -117 -370 -250 -98 -104 -174 -217 -244 -365 -231 -485 -231 -970 0 -1295 166 -234 456 -313 735 -199 212 86 434 339 556 632 139 339 177 676 106 963 -46 190 -184 374 -343 459 -123 66 -312 89 -440 55z m278 -335 c138 -68 197 -193 209 -435 17 -362 -108 -701 -342 -922 -147 -139 -262 -175 -379 -118 -147 72 -225 241 -226 487 0 115 28 293 61 393 81 240 285 508 448 589 95 48 144 49 229 6z"/>
+                        <path d="M5011 5739 c-182 -14 -313 -49 -467 -125 -227 -113 -397 -286 -556 -565 -112 -198 -238 -344 -391 -453 -36 -25 -136 -87 -223 -137 -194 -112 -285 -178 -390 -283 -166 -168 -270 -354 -341 -611 -34 -126 -43 -354 -18 -510 68 -442 377 -819 793 -969 262 -94 541 -91 902 10 279 77 483 99 883 91 322 -6 383 -13 687 -87 266 -64 369 -80 515 -80 343 0 631 117 865 350 239 239 354 520 355 870 0 178 -13 262 -62 409 -75 225 -199 421 -370 582 -98 91 -189 155 -358 249 -173 97 -221 129 -305 207 -100 93 -168 180 -312 398 -139 212 -227 313 -355 409 -248 186 -536 269 -852 245z m274 -334 c242 -42 474 -201 613 -420 26 -41 76 -120 112 -177 133 -211 321 -404 510 -523 25 -16 101 -60 170 -98 157 -87 238 -146 331 -244 127 -134 209 -281 255 -458 24 -93 25 -111 21 -265 -6 -181 -16 -234 -71 -354 -115 -253 -328 -435 -591 -508 -65 -18 -107 -22 -225 -22 -143 0 -148 1 -370 57 -352 88 -472 105 -815 114 -369 9 -685 -20 -935 -87 -291 -77 -328 -84 -470 -84 -156 -1 -228 14 -358 75 -141 65 -268 169 -358 294 -56 77 -131 241 -150 330 -26 116 -23 343 4 447 65 241 202 439 402 580 36 25 125 79 197 119 179 100 299 187 407 294 110 109 181 202 271 355 143 243 209 326 328 416 195 146 459 205 722 159z"/>
+                        </g>
+                    </svg>
+                </i> 
+                Mascotas
+            </a>
+            <a href="#" data-page="profile">
+                <i class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transform: translateY(1.3px);">
+                        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </i> 
+                Perfil
+            </a>
+            <a href="#" class="btn btn-outline session-control" onclick="abrir()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transform: translateY(1.3px);">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                    <polyline points="16 17 21 12 16 7"></polyline>
+                    <line x1="21" y1="12" x2="9" y2="12"></line>
+                </svg>
+                Iniciar Sesión
+            </a>
+        </nav>
+    </header>
+
+    <!-- Home Page -->
+    <div id="home-page" class="page active-page">
+        <section class="Start">
+            <article class="hero">
+                <div class="hero-text">
+                    <h1>Servicio único para tus mascotas</h1>
+                    <p>Cuidamos de tu mascota todo el año con atención integral, bienestar personalizado y un equipo dedicado a su salud y felicidad. ¡Confía en nosotros!</p>
+                    <div class="action-buttons">
+                        <a href="#" id="pedir-cita-btn" class="btn btn-primary" onclick="abrir()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M8 2v4"></path>
+                                <path d="M16 2v4"></path>
+                                <path d="M21 13V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h8"></path>
+                                <path d="M3 10h18"></path>
+                                <path d="M16 19h6"></path>
+                                <path d="M19 16v6"></path>
+                            </svg>                          
+                            Iniciar sesión</a>
+                        <a href="#" id="registrarse-start" class="btn btn-outline" onclick="activar(); abrir()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <line x1="19" y1="8" x2="19" y2="14"></line>
+                                <line x1="22" y1="11" x2="16" y2="11"></line>
+                            </svg>                          
+                            Registrarse</a>
+                    </div>
+                </div>
+                
+                <div class="hero-image">
+                    <img src="/Frontend/imagenes/perrito_veterinario.png" alt="Veterinario con mascota">
+                </div>
+            </article>
+        </section>
+
+        <div class="container">
+            <section class="welcome-section">
+                <h2>SOMOS CUIDAPET</h2>
+                <h3>Bienvenidos</h3>
+                <p>Veterinaria CuidaPet en Plaza Norte, la clínica veterinaria de confianza. Ofrecemos atención especializada y cuidados para mascotas con un servicio excepcional. Nos comprometemos con el bienestar de tu mascota. En CuidaPet, tu mejor amigo está en buenas manos.</p>
+            </section>
+
+            <section class="our-services-section">
+                <h2 class="services-title">Nuestros servicios</h2>
+                <article class="services-grid">
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="/Frontend/imagenes/img_vacuna.png" alt="Vacunas">
+                        </div>
+                        <div class="service-info">
+                            <h3>Vacunas</h3>
+                            <p>Protección esencial contra enfermedades para mantener a tu mascota sana y segura.</p>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="/Frontend/imagenes/img_revision_general.png" alt="Revisión general">
+                        </div>
+                        <div class="service-info">
+                            <h3>Revisión general</h3>
+                            <p>Revisión general para detectar problemas y garantizar la salud de tu mascota.</p>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="/Frontend/imagenes/img_esterilizacion_y_castracion.png" alt="Esterilización y castración">
+                        </div>
+                        <div class="service-info">
+                            <h3>Esterilización y castración</h3>
+                            <p>Procedimiento para evitar la reproducción y mejorar la salud.</p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+        </div>
+    </div>
+
+    <!-- Pets Page -->
+    <div id="pets-page" class="page">
+        <div class="container">
+            <div class="page-header">
+                <h1>Mis Mascotas</h1>
+                <p>Gestiona la información de tus mascotas</p>
+            </div>
+
+            <!-- Botones para gestionar mascotas -->
+            <div class="container-top">
+                <div id="delete-confirm-container" style="display: none;">
+                    <button id="confirm-delete-btn" class="btn btn-danger">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"></path>
+                            <line x1="18" y1="9" x2="12" y2="15"></line>
+                            <line x1="12" y1="9" x2="18" y2="15"></line>
+                        </svg>
+                        Confirmar Borrado
+                    </button>
+                    <button id="cancel-delete-btn" class="btn btn-outline">
+                        Cancelar
+                    </button>
+                </div>
+                <div class="pet-action-buttons">
+                    <button id="delete-pet-btn" class="btn btn-outline btn-danger">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 6h18"></path>
+                            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                        </svg>
+                        Borrar Mascotas
+                    </button>
+                    <button id="add-pet-btn" class="btn btn-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 5v14M5 12h14"></path>
+                        </svg>
+                        Añadir Mascota
+                    </button>
+                </div>
+            </div>
+
+            <div id="pets-grid">
+                <!--Construcción mediante JavaScript-->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para añadir mascota -->
+    <div id="add-pet-modal" class="pet-modal">
+        <div class="pet-modal-content">
+            <div class="pet-modal-header">
+                <h2>Añadir Nueva Mascota</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="pet-modal-body">
+                <form id="add-pet-form">
+                    <div class="form-group">
+                        <label for="pet-name">Nombre</label>
+                        <input type="text" id="pet-name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="pet-type">Especie</label>
+                        <select id="pet-type" class="form-control" required>
+                            <option value="">Seleccionar especie</option>
+                            <option value="Perro">Perro</option>
+                            <option value="Gato">Gato</option>
+                            <option value="Ave">Ave</option>
+                            <option value="Roedor">Roedor</option>
+                            <option value="Reptil">Reptil</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="pet-breed">Raza</label>
+                        <input type="text" id="pet-breed" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="pet-weight">Peso (kg)</label>
+                        <div class="weight-input">
+                            <input type="number" id="pet-weight" class="form-control" min="0" step="0.1" required>
+                            <span class="input-suffix">kg</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="pet-age">Edad (años)</label>
+                        <div class="age-input">
+                            <input type="number" id="pet-age" class="form-control" min="0" step="1" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="pet-photo">Foto</label>
+                        <input type="file" id="pet-photo" class="form-control" accept="image/*">
+                    </div>
+                    <div class="form-group">
+                        <label for="pet-notes">Notas especiales (opcional)</label>
+                        <textarea id="pet-notes" class="form-control" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Guardar Mascota</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pet Detail Page -->
+    <div id="pet-detail-page" class="page">
+        <div class="container">
+            <div class="container-top">
+                <div class="container-left">
+                    <a href="#" class="back-button" data-page="pets">
+                        <span>←</span> Volver a mis mascotas
+                    </a>
+
+                    <h1>Nombre de la mascota</h1>
+                    <p><span class="pet-type pet-tag">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M11.25 16.25h1.5L12 17z"></path>
+                        <path d="M16 14v.5"></path>
+                        <path d="M4.42 11.247A13.152 13.152 0 0 0 4 14.556C4 18.728 7.582 21 12 21s8-2.272 8-6.444a11.702 11.702 0 0 0-.493-3.309"></path>
+                        <path d="M8 14v.5"></path>
+                        <path d="M8.5 8.5c-.384 1.05-1.083 2.028-2.344 2.5-1.931.722-3.576-.297-3.656-1-.113-.994 1.177-6.53 4-7 1.923-.321 3.651.845 3.651 2.235A7.497 7.497 0 0 1 14 5.277c0-1.39 1.844-2.598 3.767-2.277 2.823.47 4.113 6.006 4 7-.08.703-1.725 1.722-3.656 1-1.261-.472-1.855-1.45-2.239-2.5"></path>
+                    </svg>
+                    Tipo</span> Raza
+                    </p>
+                </div>
+                <div class="container-right">
+                    <p>Próxima cita</p>
+                    <h2>Fecha</h2>
+                </div>
+            </div>
+
+            <div class="pet-profile">
+                <div class="pet-photo">
+                    <img src="" alt="Foto de la mascota">
+                    <div class="basic-info">
+                        <h3>Información básica</h3>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <div class="info-label">Edad(años)</div>
+                                <div class="info-value">Edad</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">Peso(kg)</div>
+                                <div class="info-value">Peso</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">Dueño</div>
+                                <div class="info-value">Nombre del dueño</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pet-info-section">
+                    <div class="medical-history">
+                        <h3>Historial médico</h3>
+                        <ul class="medical-list">
+                            <!-- Se llenará dinámicamente -->
+                        </ul>
+                    </div>
+
+                    <div class="allergies">
+                        <h3>Alergias</h3>
+                        <!-- Se llenará dinámicamente -->
+                    </div>
+
+                    <div class="special-notes">
+                        <h3>Notas especiales</h3>
+                        <p>Sin notas específicas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Client Pets Page -->
+    <div id="client-pets-page" class="page">
+        <div class="container">
+            <div class="container-top">
+                <div class="container-left">
+                    <a href="#" class="back-button" id="client-pets-back-button" data-page="">← Volver</a>
+                    <h1 id="client-pets-title">Mascotas de Cliente</h1>
+                    <p>Todas las mascotas registradas de este cliente</p>
+                </div>
+            </div>
+
+            <div class="pets-list">
+                <!-- Se cargará dinámicamente con las mascotas del cliente -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Appointments Page -->
+    <div id="appointments-page" class="page">
+        <div class="container">
+            <div class="page-header">
+                <h1>Mis Citas</h1>
+                <p>Gestiona tus citas veterinarias</p>
+            </div>
+
+            <!-- Próximas citas -->
+            <div class="upcoming-appointments">
+                <h2>Próximas Citas</h2>
+                <div class="appointments-grid">
+                    <!-- Las citas se cargarán dinámicamente aquí -->
+                    <!-- Cada tarjeta de cita mostrará su estado (pendiente, completada, cancelada) -->
+                </div>
+            </div>
+
+            <!-- Formulario para programar nueva cita -->
+            <div class="appointment-section">
+                <h2>Programar nueva cita</h2>
+                <form class="appointment-form">
+                    <div class="form-group">
+                        <label for="pet-select">Mascota</label>
+                        <select id="pet-select" class="form-control">
+                            <option value="">Selecciona una mascota</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="service-select">Servicio</label>
+                        <select id="service-select" class="form-control">
+                            <option value="">Selecciona un servicio</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="appointment-date">Fecha</label>
+                        <input type="date" id="appointment-date" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="appointment-time">Hora</label>
+                        <input type="time" id="appointment-time" class="form-control">
+                    </div>
+                    <button type="submit" class="submit-btn">Programar cita</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- El cuerpo muestra solo el "Profile Page" para visualización -->
+    <div id="profile-page" class="page">
+        <div class="container">
+            <div class="page-header">
+                <h1>Mi Perfil</h1>
+                <p>Gestiona tu información personal y configuración</p>
+            </div>
+
+            <div class="profile-container">
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de confirmación para cancelar citas -->
+    <div id="cancel-appointment-modal" class="pet-modal">
+        <div class="pet-modal-content">
+            <div class="pet-modal-header">
+                <h2>Confirmar cancelación</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="pet-modal-body">
+                <p>¿Estás seguro de que deseas cancelar esta cita?</p>
+                <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px;">
+                    <button id="cancel-modal-btn" class="btn btn-outline">Volver</button>
+                    <button id="confirm-cancel-btn" class="btn btn-primary">Confirmar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de confirmación para actualizar perfil -->
+    <div id="profile-update-modal" class="pet-modal">
+        <div class="pet-modal-content">
+            <div class="pet-modal-header">
+                <h2>Confirmar actualización</h2>
+                <span class="close-profile-modal close-modal">&times;</span>
+            </div>
+            <div class="pet-modal-body">
+                <p>¿Estás seguro de que deseas actualizar tu información de perfil?</p>
+                <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px;">
+                    <button id="cancel-profile-edit-btn" class="btn btn-outline">Cancelar</button>
+                    <button id="confirm-profile-update-btn" class="btn btn-primary">Confirmar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de éxito al actualizar perfil -->
+    <div id="profile-success-modal" class="pet-modal">
+        <div class="pet-modal-content">
+            <div class="pet-modal-header">
+                <h2>Perfil actualizado</h2>
+                <span class="close-profile-modal close-modal">&times;</span>
+            </div>
+            <div class="pet-modal-body">
+                <p>Tu información de perfil ha sido actualizada correctamente.</p>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/core/main.js"></script>
+    <script type="module" src="js/core/app-init.js"></script>
+    <script type="module" src="js/core/navigation.js"></script>
+    <script type="module" src="js/core/mobile-nav.js"></script>
+    <script type="module" src="js/core/openLogin.js"></script>
+    
+    <script type="module" src="js/managers/AppointmentManager.js"></script>
+    <script type="module" src="js/managers/ClientManager.js"></script>
+    <script type="module" src="js/managers/PetManager.js"></script>
+    <script type="module" src="js/managers/ProfileManager.js"></script>
+    <script type="module" src="js/managers/UserAuthManager.js"></script>
+    
+    <script type="module" src="js/ui/AppointmentUI.js"></script>
+    <script type="module" src="js/ui/PetView.js"></script>
+    <script type="module" src="js/ui/PetForm.js"></script>
+    <script type="module" src="js/ui/ProfileUI.js"></script>
+    <script type="module" src="js/ui/RoleUIManager.js"></script>
+    <script type="module" src="js/ui/PetEdit.js"></script>
+    <script type="module" src="js/ui/PetDelete.js"></script>
+    
+    <script type="module" src="js/services/APIS.js"></script>
+    <script type="module" src="js/services/AppointmentDataManager.js"></script>
+    <script type="module" src="js/services/NotificationService.js"></script>
+    <script type="module" src="js/services/supabaseClient.js"></script>
+    
+    <script type="module" src="js/utils/login.js"></script>
+    <script type="module" src="js/utils/registro.js"></script>
+</body>
+</html>

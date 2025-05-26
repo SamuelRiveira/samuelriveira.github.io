@@ -1,0 +1,217 @@
+/* Login and Register */
+
+.botonLogin-popup,
+.boton-register-popup {
+    position: absolute;
+    top: 3%;
+    right: 2%;
+    width: 130px;
+    height: 50px;
+    background-color: transparent;
+    border: 2px solid var(--white);
+    outline: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 1.1em;
+    color: var(--white);
+    font-weight: 500;
+    margin-left: 40px;
+    transition: var(--transition);
+}
+
+.botonLogin-popup:hover,
+.boton-register-popup:hover {
+    background-color: var(--white);
+    color: var(--primary-color);
+}
+
+.contenedor {
+    align-self: center;
+    position: fixed;
+    top: 25%;
+    right: 40%;
+    width: 440px;
+    height: 440px;
+    background-color: rgba(51, 70, 92, 0.85);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: var(--shadow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transform: scale(0);
+    transition: transform 0.2s ease-in, height 0.2s ease;
+    z-index: 9999999999999;
+}
+
+.contenedor.active-popup {
+    transform: scale(1);
+}
+
+.contenedor .forma-caja {
+    width: 100%;
+    padding: 40px;
+}
+
+.contenedor .forma-caja.login {
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.contenedor.active .forma-caja.login {
+    transition: none;
+    transform: translateX(-400px);
+}
+
+.contenedor .forma-caja.register {
+    position: absolute;
+    transition: none;
+    transform: translateX(400px);
+}
+
+.contenedor.active .forma-caja.register {
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.contenedor .icono-cierre {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: var(--light-gray);
+    font-size: 1.5em;
+    color: var(--text-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.forma-caja h2 {
+    font-size: 1.5em;
+    color: var(--white);
+    text-align: center;
+}
+
+.caja-input {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid var(--medium-gray);
+    margin: 30px 0;
+}
+
+.caja-input label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 0.8em;
+    color: var(--light-gray);
+    font-weight: 500;
+    pointer-events: none;
+    transition: .3s;
+}
+
+.caja-input input:focus~label,
+.caja-input input:valid~label {
+    top: -5px;
+}
+
+.caja-input input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: var(--white);
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+
+.caja-input .icono {
+    position: absolute;
+    top: 12px;
+    right: 8px;
+    font-size: 1.2em;
+    color: var(--white);
+}
+
+.recordar-olvidar {
+    font-size: .9em;
+    color: var(--light-gray);
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.recordar-olvidar label input {
+    accent-color: var(--secondary-color);
+    margin-right: 3px;
+}
+
+.recordar-olvidar a {
+    color: var(--gray);
+    text-decoration: none;
+}
+
+.recordar-olvidar a:hover {
+    text-decoration: underline;
+}
+
+.boton-login,
+.boton-register {
+    width: 100%;
+    height: 45px;
+    background: var(--light-gray);
+    border: none;
+    outline: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 1em;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.login-register {
+    font-size: .9em;
+    color: var(--white);
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+
+.login-register p a {
+    color: var(--gray);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-register p a:hover {
+    text-decoration: underline;
+}
+
+#cerrar-sesion {
+    display: none;
+}
+
+.iconPerson,
+.lockClosed,
+.iconCierre {
+    filter: invert(1);
+    width: 19px;
+}
+
+img.iconCierre {
+    filter: none;
+    width: 19px;
+}
