@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Sorpresa para Andrea! 🎁</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', 'Segoe UI', Tahoma, sans-serif;
+            overflow: hidden;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 2s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        .container {
+            text-align: center;
+            z-index: 10;
+            position: relative;
+        }
+
+        .initial-screen {
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            color: white;
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .subtitle {
+            color: #fff;
+            font-size: 1.3em;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .surprise-btn {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            border: none;
+            padding: 25px 60px;
+            font-size: 1.8em;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            font-weight: bold;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .surprise-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
+
+        .surprise-btn:active {
+            transform: translateY(-2px) scale(1.02);
+        }
+
+        .surprise-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .surprise-btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .surprise-btn span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .reveal-screen {
+            display: none;
+            animation: revealAnimation 1s ease-out;
+        }
+
+        @keyframes revealAnimation {
+            0% { opacity: 0; transform: scale(0.5) rotate(180deg); }
+            100% { opacity: 1; transform: scale(1) rotate(0deg); }
+        }
+
+        .gift-box {
+            font-size: 8em;
+            animation: shake 0.5s;
+            margin-bottom: 20px;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-15deg); }
+            75% { transform: rotate(15deg); }
+        }
+
+        .game-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 600px;
+            margin: 20px auto;
+            animation: cardAppear 1s ease-out 0.5s both;
+        }
+
+        @keyframes cardAppear {
+            0% { opacity: 0; transform: translateY(50px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .game-title {
+            color: #f5576c;
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .game-image {
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .game-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 15px;
+        }
+
+        .game-description {
+            color: #666;
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-top: 20px;
+        }
+
+        .hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 2em;
+            animation: floatHeart 4s ease-in infinite;
+            opacity: 0;
+        }
+
+        @keyframes floatHeart {
+            0% {
+                opacity: 0;
+                transform: translateY(0) rotate(0deg);
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-100vh) rotate(360deg);
+            }
+        }
+
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: #f5576c;
+            top: -20px;
+            animation: confettiFall 4s linear forwards;
+            z-index: 1000;
+        }
+
+        @keyframes confettiFall {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(120vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        .yarn-ball {
+            display: inline-block;
+            font-size: 3em;
+            animation: roll 2s linear infinite;
+        }
+
+        @keyframes roll {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .message {
+            color: #764ba2;
+            font-size: 1.3em;
+            margin-top: 20px;
+            font-weight: bold;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+
+        .download-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2em;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            font-weight: bold;
+            margin-top: 25px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+        }
+
+        .download-btn:active {
+            transform: translateY(-1px) scale(1.02);
+        }
+    </style>
+</head>
+<body>
+    <div class="stars" id="stars"></div>
+    <div class="hearts" id="hearts"></div>
+
+    <div class="container">
+        <div class="initial-screen" id="initialScreen">
+            <h1>¡Felicidades Andrea! 🌟</h1>
+            <p class="subtitle">Tengo un regalo especial para ti...</p>
+            <button class="surprise-btn" onclick="revealSurprise()">
+                <span>🎁 ¡Descubre tu sorpresa! 🎁</span>
+            </button>
+        </div>
+
+        <div class="reveal-screen" id="revealScreen">
+            <div class="gift-box">🎁</div>
+            <div class="game-card">
+                <div class="yarn-ball">🧶</div>
+                <h2 class="game-title">¡Kirby's Epic Yarn!</h2>
+                <div class="game-image">
+                    <img src="/regalo_para_andrea/imagen/imagen_juego_kirby_epic_yarn.jpeg" alt="Kirby's Epic Yarn">
+                </div>
+                <p class="game-description">
+                    ¡Prepárate para una aventura adorable y tejida! 
+                    Acompaña a Kirby en un mundo hecho completamente de tela, 
+                    donde todo es suave, colorido y lleno de diversión. 
+                    ¡Transforma todo en hilo y crea tu propia aventura!
+                </p>
+                <p class="message">
+                    ¡Espero que disfrutes muchísimo de tu juego favorito! 💖
+                </p>
+                <a href="/regalo_para_andrea/Kirby_Epic_Yarn.zip" download="Kirby_Epic_Yarn.zip">
+                    <button class="download-btn">
+                        📥 Descargar Juego
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Crear estrellas
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            for (let i = 0; i < 50; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.width = Math.random() * 3 + 'px';
+                star.style.height = star.style.width;
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.animationDelay = Math.random() * 2 + 's';
+                starsContainer.appendChild(star);
+            }
+        }
+
+        // Crear corazones flotantes
+        function createHeart() {
+            const heartsContainer = document.getElementById('hearts');
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = '💖';
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.animationDelay = Math.random() * 2 + 's';
+            heartsContainer.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 4000);
+        }
+
+        // Crear confeti mejorado
+        function createConfetti() {
+            const colors = ['#f5576c', '#f093fb', '#4facfe', '#ffd89b', '#a8edea', '#ff6b9d', '#c471ed'];
+            
+            const confetti = document.createElement('div');
+            confetti.className = 'confetti';
+            confetti.style.left = Math.random() * 100 + '%';
+            confetti.style.width = (Math.random() * 10 + 5) + 'px';
+            confetti.style.height = (Math.random() * 10 + 5) + 'px';
+            confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+            confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+            confetti.style.animationDuration = (Math.random() * 3 + 3) + 's';
+            
+            document.body.appendChild(confetti);
+
+            setTimeout(() => {
+                confetti.remove();
+            }, 6000);
+        }
+
+        // Crear confeti en bucle
+        function startConfettiLoop() {
+            setInterval(() => {
+                createConfetti();
+            }, 150);
+        }
+
+        // Revelar sorpresa
+        function revealSurprise() {
+            const initialScreen = document.getElementById('initialScreen');
+            const revealScreen = document.getElementById('revealScreen');
+
+            initialScreen.style.display = 'none';
+            revealScreen.style.display = 'block';
+
+            // Crear ráfaga inicial de confeti
+            for (let i = 0; i < 30; i++) {
+                setTimeout(() => {
+                    createConfetti();
+                }, i * 50);
+            }
+
+            // Iniciar confeti en bucle continuo
+            startConfettiLoop();
+            
+            // Crear corazones periódicamente
+            setInterval(createHeart, 500);
+        }
+
+        // Inicializar
+        createStars();
+    </script>
+</body>
+</html>
